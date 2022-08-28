@@ -40,6 +40,7 @@ body {
 
 .cabecalho-menu-item:hover {
   border-bottom: 1px solid #0d791f;
+  padding: 0 0 15px 0;
 }
 
 .conteudo {
@@ -59,7 +60,7 @@ body {
 .conteudo-principal-escrito {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
 }
 
 .conteudo-principal-escrito {
@@ -69,7 +70,7 @@ body {
 
 .conteudo-principal-escrito-titulo {
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 40px;
   color: #FFF2E7;
 }
@@ -95,7 +96,7 @@ body {
 }
 
 .conteudo-principal-escrito-botao:hover {
-  background-color: rgba(142, 255, 147, 0.53);
+  background-color: rgba(115, 134, 115, 0.53);
 }
 
 .conteudo-principal-imagem {
