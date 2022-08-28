@@ -38,6 +38,10 @@ body {
   font-size: 18px
 }
 
+.cabecalho-menu-item:hover {
+  border-bottom: 1px solid #0d791f;
+}
+
 .conteudo {
   margin-bottom: 20px;
 }
