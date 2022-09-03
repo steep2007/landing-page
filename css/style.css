@@ -33,14 +33,30 @@ body {
 
 .cabecalho-menu-item {
   font-family: 'Nunito', sans-serif;
+  margin-block: 2px;
+  text-decoration: none;
   color: #FFF2E7;
-  font-weight: 400;
-  font-size: 18px
+  position: relative;
+
 }
 
-.cabecalho-menu-item:hover {
-  border-bottom: 1px solid #0d791f;
-  padding: 0 0 15px 0;
+.cabecalho-menu-item::after{
+    
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color:#FFF;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+
+.cabecalho-menu-item:hover::after {
+  transform: scaleX(1);
 }
 
 .conteudo {
