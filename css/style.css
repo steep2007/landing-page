@@ -210,3 +210,23 @@ body {
   height: 150px;
   width: 200px;
 }
+
+.conteudo-equipe {
+  margin: 130px;
+}
+
+.conteudo-titulo-quipe-1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+}
+
+.conteudo-titulo-quipe-2  {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #095a17;
+    text-align: center;
+}
