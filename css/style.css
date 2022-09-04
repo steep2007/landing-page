@@ -212,7 +212,7 @@ body {
 }
 
 .conteudo-equipe {
-  margin: 130px;
+  margin: 130px 0 80px 0;
 }
 
 .conteudo-titulo-quipe-1 {
@@ -227,6 +227,54 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 30px;
-    color: #095a17;
+    color: #19ad32;
     text-align: center;
+}
+
+.conteudo-subtitulo-quipe-1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  color: #000000;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+.conteudo-subtitulo-quipe-1 span:hover {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  color: #19ad32;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+.conteudo-card-equipe {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 100px;
+  text-align: center;
+}
+
+.conteudo-card-equipe-uni {
+  flex-direction: column;
+  background: linear-gradient(68.15deg, #fdf6ef 16.62%, #e5e9e6 85.61%);
+  box-shadow: -5px 5px 10px -7px #292c28;
+  padding: 40px 20px 40px 20px;
+  width: 320px;
+  font-weight: 800;
+}
+
+.conteudo-card-equipe-uni img {
+  padding: 0 0 10px 0;
+}
+
+.conteudo-card-equipe-uni h4:hover {
+  color: #20bd3a;
+}
+
+.conteudo-card-texto-equipe {
+  padding: 10px 0 0 0;
 }
