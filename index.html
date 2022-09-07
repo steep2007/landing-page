@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
 </head>
-
+   <script src="js/script.js"></script>
 <body>
   <header class="cabecalho">
     <img class="cabecalho-imagem" src="img/ifmslogo.png" alt="Logo do IFMS">
@@ -56,12 +56,44 @@
         </h5>
        </div>
 
+
+       <h1 class="conteudo-titulo-img-ifmaker">Imagens</h1>
        <div class="conteudo-img-ifmaker">
-        <h1 class="conteudo-titulo-img-ifmaker">Imagens</h1>
        <div class="conteudo-img-ifmaker-lab">
-        <img src="img/ifmakerlab.jpeg" alt="imagem 1 do laboratório do IFMaker">
-        <img src="img/ifmakerlab2.jpeg" alt="imagem 2 do laboratório do IFMaker">
-        <img src="img/ifmakerlab.jpeg" alt="imagem 3 do laboratório do IFMaker">
+
+        <img onclick="showModal()" src="img/ifmakerlab.jpeg" alt="imagem 1 do laboratório do IFMaker">
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">
+                &times;
+            </span>
+          <img src="img/ifmakerlab.jpeg" alt="Imagem do laboratório">
+        </div>
+    </div>
+
+        <img onclick="showModal()" src="img/ifmakerlab2.jpeg" alt="imagem 2 do laboratório do IFMaker">
+        <div class="modal" id="modal">
+          <div class="modal-content">
+              <span class="close-button" onclick="closeModal()">
+                  &times;
+              </span>
+            <img src="img/ifmakerlab2.jpeg" alt="Imagem do laboratório">
+            <p>Impressoras 3d</p>
+          </div>
+      </div>
+
+        <img onclick="showModal()" src="img/ifmakerlab.jpeg" alt="imagem 3 do laboratório do IFMaker">
+        <div class="modal" id="modal">
+          <div class="modal-content">
+              <span class="close-button" onclick="closeModal()">
+                  &times;
+              </span>
+            <img src="img/ifmakerlab.jpeg" alt="Imagem do laboratório">
+            <p></p>
+          </div>
+      </div>
+
+
        </div>
 
         <div class="conteudo-img-ifmaker-exp">

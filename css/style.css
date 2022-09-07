@@ -68,7 +68,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 140px;
+  padding-bottom: 250px;
   padding-top: 30px;
   background: linear-gradient(68.15deg, #35a347 16.62%, #095a17 85.61%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
@@ -118,7 +118,7 @@ body {
 }
 
 .icon {
-  display: inline-block;
+  display: flex;
   font-size: 44px;
   animation: float 5s ease-in-out infinite;
 }
@@ -152,7 +152,7 @@ body {
   font-size: 30px;
   color: #000000;
   text-align: left;
-  margin: 250px 0 0 0;
+  margin: 250px 0 10px 0;
   padding: 0 190px;
   border-bottom: 5px solid #095a17;
 }
@@ -163,7 +163,7 @@ body {
   display: flex;
   padding: 20px 25px 0 25px;
   margin: 20px 0 0 200px;
-  background: linear-gradient(68.15deg, #20bd3a 16.62%, #099721 85.61%);
+  background: linear-gradient(68.15deg, #0a6119 16.62%, #086e19 85.61%);
   border-radius: 20px;
   box-shadow: -5px 7px 15px -7px #292c28;
 }
@@ -180,8 +180,12 @@ body {
 .conteudo-titulo-img-ifmaker {
   text-align: right;
   font-family: 'Poppins', sans-serif;
-  display: flex;
-  margin: -35px 0 0 0;
+  padding: -43px 50px 0 0;
+  height: 30px;
+}
+
+.conteudo-titulo-img-ifmaker h1 {
+  margin: 10 0 0 00px;
 }
 
 .conteudo-img-ifmaker {
@@ -198,6 +202,7 @@ body {
 .conteudo-img-ifmaker-lab img {
   height: 150px;
   width: 200px;
+  cursor: pointer;
 }
 
 .conteudo-img-ifmaker-exp {
@@ -209,6 +214,59 @@ body {
 .conteudo-img-ifmaker-exp img {
   height: 150px;
   width: 200px;
+  cursor: pointer;
+}
+
+.modal {
+  font-family: 'Poppins', sans-serif;
+  z-index:1;
+  position: fixed;
+  top:0;
+  left:0;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0.25s ease-in-out , opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.modal-content {
+  padding: 16px 24px;
+  width: 1050px;
+  border-radius: 0.5rem;
+}
+
+.modal-content img {
+  width: 900px;
+  height: 600px;
+  border-radius: 5px;
+}
+
+.close-button {
+ float: right;
+ width: 24px;
+ line-height: 24px;
+ margin: -20px 0 0 0;
+ text-align: center;
+ cursor: pointer;
+ border-radius: 0.25rem;
+ background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
 }
 
 .conteudo-equipe {
@@ -219,7 +277,7 @@ body {
   text-align: center;
   left: 800%;
   width: 40%;
-  height: 8px;
+  height: 4px;
   border: 0px;
   border-top: 1px solid #27aa3d;
   background-color: #27aa3d;
@@ -267,6 +325,7 @@ body {
   flex-direction: row;
   gap: 100px;
   text-align: center;
+  margin: 0 0 150px 0;
 }
 
 .conteudo-card-equipe-uni {
