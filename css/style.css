@@ -146,15 +146,29 @@ body {
   justify-content: space-around;
 }
 
+.conteudo-titulo-ifmaker hr {
+  text-align: center;
+  left: 100%;
+  width: 8%;
+  height: 4px;
+  border: 0px;
+  border-top: 1px solid #109727;
+  background-color: #109727;
+  margin: 0 600px;
+}
+
 .conteudo-titulo-ifmaker {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   font-size: 30px;
   color: #000000;
-  text-align: left;
+  text-align: center;
   margin: 250px 0 10px 0;
   padding: 0 190px;
-  border-bottom: 5px solid #095a17;
+}
+
+.conteudo-titulo-ifmaker span:hover {
+  color: #19ad32;
 }
 
 .conteudo-texto-ifmaker {
@@ -163,7 +177,7 @@ body {
   display: flex;
   padding: 20px 25px 0 25px;
   margin: 20px 0 0 200px;
-  background: linear-gradient(68.15deg, #0a6119 16.62%, #086e19 85.61%);
+  background: linear-gradient(68.15deg, #19ad32 16.62%, #22af3a 85.61%);
   border-radius: 20px;
   box-shadow: -5px 7px 15px -7px #292c28;
 }
@@ -203,6 +217,9 @@ body {
   height: 150px;
   width: 200px;
   cursor: pointer;
+  border-left: #109727 solid 5px;
+  padding: 0 0 0 8px;
+  border-radius: 2px;
 }
 
 .conteudo-img-ifmaker-exp {
@@ -215,6 +232,9 @@ body {
   height: 150px;
   width: 200px;
   cursor: pointer;
+  border-left: #109727 solid 5px;
+  padding: 0 0 0 8px;
+  border-radius: 2px;
 }
 
 .modal {
