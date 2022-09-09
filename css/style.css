@@ -101,8 +101,8 @@ body {
 }
 
 .conteudo-principal-escrito-botao {
-  background-color: #ECD6C4;
-  width: 180px;
+  background-color: #fffcf9;
+  width: 280px;
   height: 60px;
   border: none;
   box-shadow: 4px 5px 4px rgba(19, 16, 16, 0.25);
@@ -114,7 +114,8 @@ body {
 }
 
 .conteudo-principal-escrito-botao:hover {
-  background-color: rgba(142, 255, 147, 0.53);
+  background-color: rgba(65, 255, 75, 0.53);
+  cursor: pointer;
 }
 
 .icon {
@@ -296,12 +297,12 @@ body {
 .conteudo-equipe hr {
   text-align: center;
   left: 800%;
-  width: 40%;
+  width: 20%;
   height: 4px;
   border: 0px;
   border-top: 1px solid #27aa3d;
   background-color: #27aa3d;
-  margin: 0 505px;
+  margin: 0 670px;
 }
 
 .conteudo-titulo-quipe-1 {
@@ -345,6 +346,16 @@ body {
   flex-direction: row;
   gap: 100px;
   text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.conteudo-card-equipe2 {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 100px;
+  text-align: center;
   margin: 0 0 150px 0;
 }
 
@@ -368,3 +379,61 @@ body {
 .conteudo-card-texto-equipe {
   padding: 10px 0 0 0;
 }
+
+.conteudo-numeros {
+  background: #20bd3a;
+  padding: 10px 0 30px 0;
+}
+
+.conteudo-titulo-numeros {
+  text-align: center;
+  font-family: 'Poppins', sans serif;
+  margin: 0 0 50px 0;
+
+}
+
+.conteudo-cards-numeros {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+
+}
+
+.conteudo-cards-numeros h3 {
+  padding: 0 0 5px 0;
+  font-family: 'Poppins', sans serif;
+}
+
+.conteudo-cards-numeros p {
+  padding: 0 0 5px 0;
+  font-family: 'Poppins', sans serif;
+}
+
+.conteudo-cards-numeros img {
+  padding: 0 0 5px 0;
+  width: 50px;
+  height: 50px;
+}
+
+.conteudo-cards-uni {
+  background: linear-gradient(68.15deg, #fdf6ef 16.62%, #e5e9e6 85.61%);
+  box-shadow: -5px 2px 5px -7px #292c28;
+  border-radius: 10px;
+  padding: 40px 20px 40px 20px;
+  width: 320px;
+}
+
+.conteudo-cards-uni span {
+  color: #20bd3a;
+}
+
+/*.conteudo-cards-uni:hover {
+  display: flex;
+  height: 1%;
+  padding: 30px 20px 30px 20px;
+  transform: scale(1);
+  transition: visibility 1000s ease-in-out;
+  flex-direction: column;
+}*/
