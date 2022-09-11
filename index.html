@@ -74,10 +74,10 @@
        <div class="conteudo-img-ifmaker">
        <div class="conteudo-img-ifmaker-lab">
 
-        <img onclick="showModal()" src="img/ifmakerlab.jpeg" alt="imagem 1 do laboratório do IFMaker">
+        <img onclick="showModal('modal')" src="img/ifmakerlab.jpeg" alt="imagem 1 do laboratório do IFMaker">
     <div class="modal" id="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">
+            <span class="close-button" onclick="closeModal('modal')">
                 &times;
             </span>
             <h3>Imagens do Laboratório</h3>
@@ -86,10 +86,10 @@
         </div>
     </div>
 
-        <img onclick="showModal()" src="img/ifmakerlab2.jpeg" alt="imagem 2 do laboratório do IFMaker">
-        <div class="modal" id="modal">
+        <img onclick="showModal('modal2')" src="img/ifmakerlab2.jpeg" alt="imagem 2 do laboratório do IFMaker">
+        <div class="modal" id="modal2">
           <div class="modal-content">
-              <span class="close-button" onclick="closeModal()">
+              <span class="close-button" onclick="closeModal('modal2')">
                   &times;
               </span>
               <h3>Imagens do Laboratório</h3>
@@ -98,10 +98,10 @@
           </div>
       </div>
 
-        <img onclick="showModal()" src="img/ifmakerlab.jpeg" alt="imagem 3 do laboratório do IFMaker">
-        <div class="modal" id="modal">
+        <img onclick="showModal('modal3')" src="img/ifmakerlab.jpeg" alt="imagem 3 do laboratório do IFMaker">
+        <div class="modal" id="modal3">
           <div class="modal-content">
-              <span class="close-button" onclick="closeModal()">
+              <span class="close-button" onclick="closeModal('modal3')">
                   &times;
               </span>
             <img src="img/ifmakerlab.jpeg" alt="Imagem do laboratório">
@@ -215,13 +215,13 @@
 
     <section>
       <div class="conteudo-numeros">
-        <h1 class="conteudo-titulo-numeros">Números</h1>
         <div class="conteudo-cards-numeros">
           <div class="conteudo-cards-uni">
             <img src="img/icon-arduino.png" alt="ícone experimento">
           <h3>Total de <span>experimentos</span></h3>
           <p>00 <strong>experimentos</strong></p>
           </div>
+        
           <div class="conteudo-cards-uni">
             <img src="img/icons8-relógio-50.png" alt="ícone horas">
             <h3>Horas <span>trabalhadas</span></h3>
@@ -237,7 +237,7 @@
             <h3>Total de <span>escolas</span></h3>
             <p>00 <strong>escolas</strong></p>
           </div>
-        </div>
+        </>
       </div>
     </section>
 
