@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <div class="conteudo-card-equipe">
+        <div class="conteudo-card-equipe-uni">
+          <img src="img/icon-person.png" alt="icon andre">
+          <h4>André Quintiliano Bezerra Silva</h4>
+          <p>Professor</p>
+          <p>andre.bezerra@ifms.edu.br</p>
+          <div class="conteudo-card-texto-equipe">
+          <p>AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+          </p>
+        </div>
+        </div>
+
+        <div class="conteudo-card-equipe-uni">
+            <img src="img/icon-person.png" alt="icon stephani">
+            <h4>Stephani Borges Salgado</h4>
+            <p>Estudante</p>
+            <p>stephani.salgado@estudante.ifms.edu.br</p>
+            <div class="conteudo-card-texto-equipe">
+            <p>AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+            </p>
+          </div>
+          </div>
+  
+          <div class="conteudo-card-equipe-uni">
+            <img src="img/icon-person.png" alt="icon isabele">
+            <h4>Isabele de Aquino Alves</h4>
+            <p>Estudante</p>
+            <p>isabele.alves@estudante.ifms.edu.br</p>
+            <div class="conteudo-card-texto-equipe">
+            <p>AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+              AAAAAAAAAAAAAAA
+            </p>
+          </div>
+          </div>
+          </div>
+</div>
+
+<div class="mySlides fade">
+    <div class="conteudo-card-equipe2">
+        <div class="conteudo-card-equipe-uni">
+          <img src="img/icon-person.png" alt="icon ana julia">
+          <h4>Ana Júlia Ferreira Müller</h4>
+          <p>Estudante</p>
+          <p>ana.muller@estudante.ifms.edu.br</p>
+          <div class="conteudo-card-texto-equipe">
+          <p>AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAA
+          </p>
+        </div>
+
+      </div>
+      <div class="conteudo-card-equipe-uni">
+        <img src="img/icon-person.png" alt="icon andre junior">
+        <h4>André Barbosa Rios Junior</h4>
+        <p>Estudante</p>
+        <p>andre.junior3@estudante.ifms.edu.br</p>
+        <div class="conteudo-card-texto-equipe">
+        <p>AAAAAAAAAAAAAAA
+          AAAAAAAAAAAAAAA
+          AAAAAAAAAAAAAAA
+          AAAAAAAAAAAAAAA
+          AAAAAAAAAAAAAAA
+          AAAAAAAAAAAAAAA
+        </p>
+      </div>
+    </div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
