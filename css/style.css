@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@200;300;400;500;700&display=swap');
 
+:root {
+  --primary-color: #010712;
+  --secondary-color: #ffffff;
+  --bg-color: #20bd3a ;
+  --button-color: #3B3636;
+  --h1-color: #3F444C;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -499,3 +507,483 @@ body {
 *****************************************************************************
 
 ***************************************************************************** */
+<<<<<<< HEAD
+=======
+
+.exp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(68.15deg, #20bd3a 16.62%, #20bd3a  85.61%);
+  padding-bottom: 100px;
+  padding-top: 100px;}
+
+.ex{
+  background-color: #ffffff;
+  border-radius: 6px;
+  color: #000000;
+  padding: 30px;
+  width: 220px;
+  overflow: hidden;
+  transition: 0.6s;
+  transform: translate(0);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+/* 
+.ex:hover{
+  
+  
+} */
+.ex p{
+  margin: 0;
+}
+
+.titlev{
+  font-family: 'Poppins', sans-serif;
+  color: #20bd3a;
+  font-size: 30px;
+  text-align: center;
+}
+.titlev2{
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  font-size: 10;
+  text-align: center;
+  padding-top: 5px;
+}
+.titlev3{
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  font-size: 10;
+  text-align: center;
+}
+
+.cont {
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.contact-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: 
+  var(--bg-color);
+}
+
+
+
+.right-col {
+  background: 
+  var(--bg-color);
+  width: 50vw;
+  height: 100vh;
+  padding: 5rem 3.5rem;
+}
+
+.cont h2,h3, label, button{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+}
+.description{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  
+}
+.cont h2 {
+  font-family: 'Poppins', sans-serif;
+  color:3F444C;;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+}
+
+.cont p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  letter-spacing: 0.01rem;
+  width: 40vw;
+  margin: 0.25rem 0;
+}
+
+.cont label {
+  color: var(--secondary-color);;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+form {
+  width: 31.25rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+input, textarea, label {
+  width: 40vw;
+  display: block;
+}
+
+.cont p, placeholder, input, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--primary-color);
+}
+
+input, textarea {
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--bg-color);
+  border: none;
+  border-bottom: 1px solid ;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: 300;
+  background: var(--button-color);
+  color: #fff;
+  width: 10rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+
+}
+
+input:hover, textarea:hover, button:hover {
+  opacity: 0.5;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+/* Toggle Switch */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 160px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+}
+
+
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 0.25rem;
+  content: "";
+  width: 26px;
+  height: 26px;
+  left: 0.25rem;
+  position: absolute;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--button-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#error, #success-msg {
+  width: 40vw;
+  margin: 0.125rem 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary-color);
+  }
+
+
+  #success-msg {
+  transition-delay: 3s;
+  }
+
+@media only screen and (max-width: 950px) {
+  .logo {
+    width: 8rem;
+  }
+  .cont h1 {
+    font-size: 1.75rem;
+  }
+  .cont p {
+    font-size: 0.7rem;
+  }
+  input, textarea, button {
+    font-size: 0.65rem;
+  }
+  .description {
+    font-size: 0.3rem;
+    margin-left: 0.4rem;
+  }
+  button {
+    width: 7rem;
+  }
+  .theme-switch-wrapper {
+    width: 120px;
+  }
+  .theme-switch {
+  height: 28px;
+  width: 50px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 0.25rem;
+  content: "";
+  width: 20px;
+  height: 20px;
+  left: 0.25rem;
+  position: absolute;
+  transition: .4s;
+}
+  input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 15px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+}
+.exp2 {
+  
+  background: linear-gradient(68.15deg, rgb(255, 255, 255) 16.62%rgb(255, 255, 255) 85.61%);
+}
+.loc{
+  padding-left: 16%;
+  margin-top: 20%;
+  font-size: 30px;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+}
+.loc2{
+
+  padding-left: 15.9%;
+  padding-top: 5%;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+  
+}
+.loc3{
+
+  padding-left: 15.9%;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+.cont4{
+  padding-left: 15%;
+  margin-top: 30%;
+  font-size: 25px;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+}
+.icon{
+  display: inline-block;
+  font-size: 44px;
+  animation: float 5s ease-in-out
+  infinite ;
+}
+.insta{
+  animation-delay: 1s;
+}
+.email{
+  animation-delay: 2s;
+}
+.you{
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translateY(-15px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+}
+.icon2{
+
+  padding-top: 16%;
+  padding-left: 18%;
+}
+#line {
+
+  position: absolute;
+  text-align: center;
+  left: 57%;
+  width: 13%;
+  height: 3px;
+  border: 0px;
+  background-color: #000000;
+  
+
+
+}
+
+
+
+.body-t{
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+
+
+/* .conteudotes{
+  display: flex;
+  width: 350px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 25px;
+  column-gap:20px;
+
+}
+.cardtes {
+  flex: 0 0 100%;
+  padding: 30px;
+  scroll-snap-align: start;
+  border-radius: 30px;
+  margin-left: 19%;
+  padding-bottom: 30%;
+  background: linear-gradient(to bottom, #095a17 43%, #095a17 33%, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
+
+}
+.ft{
+  display: flex;
+
+}
+.tes{
+  padding-top: 0px;
+  display: block;
+}
+.textte{
+  display: block;
+}
+.ftu{
+ 
+  width: 10%;
+  height: 0%;
+}
+.test2{
+
+  text-indent: 0; */
+
+.teste5{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(68.15deg, rgb(255, 255, 255) 16.62%, rgb(255, 255, 255) 85.61%);
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+.test2 {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+padding-bottom: 100px;
+padding-top: 100px;}
+
+.test{
+  background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  33%, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
+  border-radius: 6px;
+  color: #000000;
+  padding: 12px;
+  width: 250px;
+  overflow: hidden;
+  transition: 0.6s;
+  transform: translate(0);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+.ft{
+  display: flex;
+  align-items: center;
+}
+.ftu{
+ 
+  width: 10%;
+  height: 0%;
+}
+.texttt{
+  margin-top: 18px;
+}
+
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+>>>>>>> 17973e281e5ac2074dc42d6bbd05b7d8f95b043d
