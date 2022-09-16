@@ -17,6 +17,7 @@
 
 body {
   font-size: 100%;
+  overflow-x: hidden;
 
 }
 
@@ -433,7 +434,7 @@ body {
 .conteudo-cards-uni span {
   color: #20bd3a;
 }
-
+/*
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -456,7 +457,7 @@ body {
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
+*/
 .dot {
   cursor: pointer;
   height: 15px;
