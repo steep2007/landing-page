@@ -755,7 +755,7 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 950px) {
   .logo {
-    width: 8rem;
+    width: 8rem;  
   }
   .cont h1 {
     font-size: 1.75rem;
