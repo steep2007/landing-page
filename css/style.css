@@ -17,6 +17,7 @@
 
 body {
   font-size: 100%;
+
 }
 
 .cabecalho {
@@ -507,8 +508,7 @@ body {
 *****************************************************************************
 
 ***************************************************************************** */
-<<<<<<< HEAD
-=======
+
 
 .exp {
   display: flex;
@@ -701,7 +701,7 @@ button:active {
   display:none;
 }
 
-.slider {
+/*.slider {
   background-color: #ccc;
   bottom: 0;
   cursor: pointer;
@@ -721,7 +721,7 @@ button:active {
   left: 0.25rem;
   position: absolute;
   transition: .4s;
-}
+}*/
 
 input:checked + .slider {
   background-color: var(--button-color);
@@ -986,4 +986,4 @@ padding-top: 100px;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
->>>>>>> 17973e281e5ac2074dc42d6bbd05b7d8f95b043d
+
