@@ -598,14 +598,14 @@ body {
   letter-spacing: 0.1rem;
   
 }
-.cont h2 {
+/* .cont h2 {
   font-family: 'Poppins', sans-serif;
   color:3F444C;;
   text-transform: uppercase;
   font-size: 2.5rem;
   letter-spacing: 0.5rem;
   font-weight: 300;
-}
+} */
 
 .cont p {
   color: var(--secondary-color);
