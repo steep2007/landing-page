@@ -16,10 +16,10 @@
       <nav class="cabecalho-menu">
         <a class="cabecalho-menu-item">Início</a>
         <a class="cabecalho-menu-item">IFMaker</a>
-        <a class="cabecalho-menu-item">Experimentos</a>
+        <a class="cabecalho-menu-item" href="#experimentos-div">Experimentos</a>
         <a class="cabecalho-menu-item">Equipe</a>
         <a class="cabecalho-menu-item">FAQ</a>
-        <a class="cabecalho-menu-item">Contato</a>
+        <a class="cabecalho-menu-item" href="#contact-section">Contato</a>
       </nav>
     </header>
 
@@ -31,7 +31,7 @@
             <h1 class="conteudo-principal-escrito-titulo">mais Experimental</h1>
           </div>
           <h2 class="conteudo-principal-escrito-subtitulo">Uma metodologia diferenciada...</h2>
-          <button class="conteudo-principal-escrito-botao">Ver Experimentos</button>
+          <a href="#experimentos-div"><button class="conteudo-principal-escrito-botao">Ver Experimentos</button></a>
         </div>
         <div class="icons- wrapper">
           <img class="conteudo-principal-imagem icon" src="img/ifmaker-icon.png" alt="Imagem da logo do IFMaker">
@@ -143,7 +143,8 @@
         </div>
       </section>
 
-      <div class="exp">
+      <div class="exp" id="experimentos-div">
+        <h3 class="conteudo-subtitulo-quipe-1">Experimentos</h3>
         <nav>
           <a href="#">
             <div class="ex">
@@ -417,75 +418,75 @@
               </>
             </div>
         </section>
-
-    </main>
-    <div class="cont">
-      <div class="contact-container">
-        <div class="left-col">
-        </div>
-        <div class="right-col">
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-              <input type="checkbox" id="checkbox">
-
-            </label>
-
-          </div>
-
-          <section class="oi">
-
-            <h2>Formulário de contato</h2>
-
-            <form id="contact-form" method="post" action="php/cont.php">
-              <label for="name">Nome</label>
-              <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-              <label for=numero">Telefone</label>
-              <input type="text" id="numero" name="telefone" placeholder="Digite seu telefone" required>
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-              <label for="message">Mensagem</label>
-              <textarea rows="6" placeholder="Sua mensagem" id="message" name="message" required></textarea>
-              <button type="submit" id="submit" name="submit">Enviar</button>
-
-            </form>
-            <div id="error"></div>
-            <div id="success-msg"></div>
-        </div>
-        <div>
-          <H3 class="loc">LOCALIZAÇÃO</H3>
-          <p class="loc2">
-            Br 060 S/N Saida P, Jardim - MS, 79240-000
-          </p>
-          <p class="loc3">
-            Telefone: (67) 3209-0200
-          </p>
-          <h3 class="cont4">
-            CONFIRA NOSSAS REDES SOCIAIS:
-          </h3>
-          <div class="icon2">
-            <div class="icon">
-              <i class="insta">
-                <img src="img/icons8-instagram-96.png" alt="logo do Instagram" width=40px>
-              </i>
-              <i class="email">
-                <img src="img/icons8-mail-250.png" alt="logo de Email" width="40px">
-              </i>
-              <i class="you">
-                <img src="img/icons8-reproduzir-youtube-150.png" alt="logo do Youtube" width="40">
-              </i>
+        <div class="cont">
+          <div class="contact-container">
+            <div class="left-col">
             </div>
+            <div class="right-col">
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox">
+
+                </label>
+
+              </div>
+
+              <section class="oi" id="contact-section">
+
+                <h2>Formulário de contato</h2>
+
+                <form id="contact-form" method="post" action="php/cont.php">
+                  <label for="name">Nome</label>
+                  <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                  <label for=numero">Telefone</label>
+                  <input type="text" id="numero" name="telefone" placeholder="Digite seu telefone" required>
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                  <label for="message">Mensagem</label>
+                  <textarea rows="6" placeholder="Sua mensagem" id="message" name="message" required></textarea>
+                  <button type="submit" id="submit" name="submit">Enviar</button>
+
+                </form>
+                <div id="error"></div>
+                <div id="success-msg"></div>
+            </div>
+            <div>
+              <H3 class="loc">LOCALIZAÇÃO</H3>
+              <p class="loc2">
+                Br 060 S/N Saida P, Jardim - MS, 79240-000
+              </p>
+              <p class="loc3">
+                Telefone: (67) 3209-0200
+              </p>
+              <h3 class="cont4">
+                CONFIRA NOSSAS REDES SOCIAIS:
+              </h3>
+              <div class="icon2">
+                <div class="icon">
+                  <i class="insta">
+                    <img src="img/icons8-instagram-96.png" alt="logo do Instagram" width=40px>
+                  </i>
+                  <i class="email">
+                    <img src="img/icons8-mail-250.png" alt="logo de Email" width="40px">
+                  </i>
+                  <i class="you">
+                    <img src="img/icons8-reproduzir-youtube-150.png" alt="logo do Youtube" width="40">
+                  </i>
+                </div>
+              </div>
+              <hr id="line">
+            </div>
+
+
+
           </div>
-          <hr id="line">
+
         </div>
 
+        </div>
+      </section>
+    </main>
 
-
-      </div>
-
-    </div>
-
-    </div>
-    </section>
   </body>
 
 </html>

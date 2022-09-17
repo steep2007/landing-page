@@ -28,6 +28,9 @@ body {
   justify-content: space-around;
   padding: 10px;
   background-color: #108f25;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
 }
 
 .cabecalho-imagem {
@@ -70,6 +73,7 @@ body {
 
 .conteudo {
   margin-bottom: 20px;
+  padding-top: 65px;
 }
 
 .conteudo-principal {
@@ -249,7 +253,7 @@ body {
 
 .modal {
   font-family: 'Poppins', sans-serif;
-  z-index:1;
+  z-index:5;
   position: fixed;
   top:0;
   left:0;
@@ -282,7 +286,7 @@ body {
  float: right;
  width: 24px;
  line-height: 24px;
- margin: -20px 0 0 0;
+ /* margin: -20px 0 0 0; */
  text-align: center;
  cursor: pointer;
  border-radius: 0.25rem;
