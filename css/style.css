@@ -515,7 +515,23 @@ body {
 
 ***************************************************************************** */
 
+#line-ex{
 
+  position: absolute;
+  text-align: center;
+  left: 42%;
+  width: 16%;
+  height: 3px;
+  border: 0px;
+  background-color: #000000;
+
+}
+.testando-hover{
+  color: pink;
+}
+.testando-hover::hover{
+  border: 1px  solid #000000;
+}
 .exp {
   display: flex;
   flex-direction: row;
@@ -939,7 +955,16 @@ input:checked + .slider:before {
 
   text-indent: 0; */
 
-.teste5{
+#line-tes{
+  position: absolute;
+    text-align: center;
+    left: 42%;
+    width: 16%;
+    height: 3px;
+    border: 0px;
+    background-color: #000000;
+}
+  .teste5{
 
   display: flex;
   flex-direction: row;
