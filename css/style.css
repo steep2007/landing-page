@@ -72,7 +72,6 @@ body {
 }
 
 .conteudo {
-  margin-bottom: 20px;
   padding-top: 65px;
 }
 
@@ -398,7 +397,7 @@ body {
 }
 
 .conteudo-card-equipe-uni h4:hover {
-  color: #20bd3a;
+  color: #087a1b;
 }
 
 .conteudo-card-texto-equipe {
@@ -630,13 +629,10 @@ body {
 .cont h2,h3, label, button{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  letter-spacing: 0.1rem;
 }
 .description{
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  letter-spacing: 0.1rem;
-  
 }
 /* .cont h2 {
   font-family: 'Poppins', sans-serif;
@@ -650,7 +646,6 @@ body {
 .cont p {
   color: var(--secondary-color);
   font-size: 0.9rem;
-  letter-spacing: 0.01rem;
   width: 40vw;
   margin: 0.25rem 0;
 }
@@ -856,7 +851,7 @@ input:checked + .slider:before {
 }
 .loc{
   padding-left: 16%;
-  margin-top: 20%;
+  margin-top: 25%;
   font-size: 30px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
@@ -877,7 +872,7 @@ input:checked + .slider:before {
 }
 .cont4{
   padding-left: 15%;
-  margin-top: 30%;
+  margin-top: 10%;
   font-size: 25px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
@@ -910,12 +905,10 @@ input:checked + .slider:before {
     }
 }
 .icon2{
-
-  padding-top: 16%;
-  padding-left: 18%;
+  padding-top: 8%;
+  padding-left: 22%;
 }
 #line {
-
   position: absolute;
   text-align: center;
   left: 57%;
@@ -923,16 +916,12 @@ input:checked + .slider:before {
   height: 3px;
   border: 0px;
   background-color: #000000;
-  
-
-
 }
 
 
 
 .body-t{
   font-family: 'Poppins', sans-serif;
-  
 }
 
 
@@ -1050,4 +1039,30 @@ padding-top: 80px;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+.conteudo-footer {
+  margin: 0;
+  text-align: center;
+  background-color: var(--bg-color);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: #000000;
+  padding: 20px 0 20px 0;
+}
+
+.conteudo-footer h2 {
+  padding: 15px 0 0 0;
+}
+
+.linha-footer {
+  position: absolute;
+  text-align: center;
+  left: 26%;
+  width: 48%;
+  height: 3px;
+  border: 0px;
+  background-color: #000000;
+}
+
 
