@@ -73,7 +73,7 @@ body {
 
 .conteudo {
   margin-bottom: 20px;
-  padding-top: 70px;
+  padding-top: 65px;
 }
 
 .conteudo-principal {
@@ -127,7 +127,7 @@ body {
 }
 
 .conteudo-principal-escrito-botao:hover {
-  background-color: rgba(65, 255, 75, 0.53);
+  background-color: rgba(1, 231, 13, 0.801);
   cursor: pointer;
 }
 
@@ -303,8 +303,20 @@ body {
   transform: scale(1.0);
 }
 
+.conteudo-titulo-janela-modal {
+  text-align: center;
+  margin: 15px 0 0 0;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.conteudo-subtitulo-janela-modal {
+  padding: 0 0 0 18px;
+  font-weight: 400;
+}
+
 .conteudo-equipe {
-  margin: 130px 0 80px 0;
+  margin: 130px 0 50px 0;
 }
 
 .conteudo-equipe hr {
@@ -359,7 +371,7 @@ body {
   flex-direction: row;
   gap: 100px;
   text-align: center;
-  margin: 0 0 80px 0;
+  margin: 0 0 50px 0;
 }
 
 .conteudo-card-equipe2 {
@@ -369,12 +381,12 @@ body {
   flex-direction: row;
   gap: 100px;
   text-align: center;
-  margin: 0 0 80px 0;
+  margin: 0 0 50px 0;
 }
 
 .conteudo-card-equipe-uni {
   flex-direction: column;
-  background: linear-gradient(68.15deg, #0fd830 16.62%, #1fd13d 85.61%);
+  background: linear-gradient(68.15deg, #2edf4b 16.62%, #0de631 85.61%);
   box-shadow: -5px 5px 10px -7px #292c28;
   padding: 40px 20px 40px 20px;
   width: 320px;
@@ -515,7 +527,17 @@ body {
 
 ***************************************************************************** */
 
-#line-ex{
+.conteudo-subtitulo-experimentos-1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  padding: 20px 0 35px 0;
+  background-color:#20bd3a;
+}
+
+/*#line-ex{
 
   position: absolute;
   text-align: center;
@@ -524,8 +546,7 @@ body {
   height: 3px;
   border: 0px;
   background-color: #000000;
-
-}
+}*/
 .testando-hover{
   color: pink;
 }
@@ -539,7 +560,8 @@ body {
   justify-content: space-around;
   background: linear-gradient(68.15deg, #20bd3a 16.62%, #20bd3a  85.61%);
   padding-bottom: 100px;
-  padding-top: 100px;}
+  /*padding-top: 100px;*/
+}
 
 .ex{
   background-color: #ffffff;
@@ -553,10 +575,8 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
 }
-/* 
+/*
 .ex:hover{
-  
-  
 } */
 .ex p{
   margin: 0;
@@ -955,15 +975,28 @@ input:checked + .slider:before {
 
   text-indent: 0; */
 
-#line-tes{
-  position: absolute;
-    text-align: center;
-    left: 42%;
-    width: 16%;
-    height: 3px;
-    border: 0px;
-    background-color: #000000;
+
+  .conteudo-subtitulo-quipe-2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  padding: 120px 0 0;
 }
+
+#line-tes{
+  text-align: center;
+  left: 100%;
+  width: 15%;
+  height: 4px;
+  border: 0px;
+  border-top: 1px solid #109727;
+  background-color: #109727;
+  margin: 0 715px;
+}
+
+
   .teste5{
 
   display: flex;
@@ -979,8 +1012,8 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
-padding-bottom: 100px;
-padding-top: 100px;}
+padding-bottom: 50px;
+padding-top: 80px;}
 
 .test{
   background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  33%, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
