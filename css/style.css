@@ -504,6 +504,102 @@ body {
   .prev, .next,.text {font-size: 11px}
 }
 
+.conteudo-faq {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.conteudo-faq-texto-titulo-subtitulo {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.conteudo-faq-texto-titulo-subtitulo h1 {
+  font-size: 30px;
+}
+
+
+.conteudo-faq-texto-lado h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.conteudo-faq-texto2 {
+  background-color: #087a1b;
+}
+
+.accordion {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.accordion-item {
+  background-color: rgb(54, 189, 54);
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+.accordion-item-header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #000, transparent) 1;
+}
+
+.conteudo-botao-faq {
+  display: block;
+  background-color: #1e2518;
+  width: 100px;
+  height: 30px;
+  border: none;
+  box-shadow: 4px 5px 4px rgba(19, 16, 16, 0.25);
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  color: #fff;
+  margin: 10px 0 0 0; 
+}
+
+@media(max-width:767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 
 /* *****************************************************************************
 
@@ -691,7 +787,7 @@ textarea {
   resize: none;
 }
 
-button {
+.conteudo-botao-contato {
   text-transform: uppercase;
   font-weight: 300;
   background: var(--button-color);

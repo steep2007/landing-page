@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <style>
 
 
@@ -66,97 +68,23 @@
 </head>
 <body>
 
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-    <div class="conteudo-card-equipe">
-        <div class="conteudo-card-equipe-uni">
-          <img src="img/icon-person.png" alt="icon andre">
-          <h4>André Quintiliano Bezerra Silva</h4>
-          <p>Professor</p>
-          <p>andre.bezerra@ifms.edu.br</p>
-          <div class="conteudo-card-texto-equipe">
-          <p>AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-          </p>
+  <div class="accordion rounded-5 p-5" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" class="faq-cor" class="conteudo-faq-texto" id="headingOne" class="conteudo-faq-texto1">
+        <button class="accordion-button" class="conteudo-seta-faq" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"  class="conteudo-faq-texto-lado" aria-expanded="true" aria-controls="collapseOne">
+          Arduino e seus componentes
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body" class="conteudo-faq-texto-lado">
+          <h3>Nesta parte você irá aprender a utilizar<br>
+            o Arduino e os componentes usados nos experimentos
+          </h3>
+          <button class="conteudo-botao-faq">Veja mais</button>
         </div>
-        </div>
-
-        <div class="conteudo-card-equipe-uni">
-            <img src="img/icon-person.png" alt="icon stephani">
-            <h4>Stephani Borges Salgado</h4>
-            <p>Estudante</p>
-            <p>stephani.salgado@estudante.ifms.edu.br</p>
-            <div class="conteudo-card-texto-equipe">
-            <p>AAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAA
-            </p>
-          </div>
-          </div>
-  
-          <div class="conteudo-card-equipe-uni">
-            <img src="img/icon-person.png" alt="icon isabele">
-            <h4>Isabele de Aquino Alves</h4>
-            <p>Estudante</p>
-            <p>isabele.alves@estudante.ifms.edu.br</p>
-            <div class="conteudo-card-texto-equipe">
-            <p>AAAAAAAAAAAAAAA
-
-</div>
-
-<div class="mySlides fade">
-    <div class="conteudo-card-equipe2">
-        <div class="conteudo-card-equipe-uni">
-          <img src="img/icon-person.png" alt="icon ana julia">
-          <h4>Ana Júlia Ferreira Müller</h4>
-          <p>Estudante</p>
-          <p>ana.muller@estudante.ifms.edu.br</p>
-          <div class="conteudo-card-texto-equipe">
-          <p>AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAA
-          </p>
-        </div>
-
-      </div>
-      <div class="conteudo-card-equipe-uni">
-        <img src="img/icon-person.png" alt="icon andre junior">
-        <h4>André Barbosa Rios Junior</h4>
-        <p>Estudante</p>
-        <p>andre.junior3@estudante.ifms.edu.br</p>
-        <div class="conteudo-card-texto-equipe">
-        <p>AAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAAA
-          AAAAAAAAAAAAAAA
-        </p>
       </div>
     </div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-</div>
+   
 
 <script>
 let slideIndex = 1;
