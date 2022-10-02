@@ -40,8 +40,6 @@ const accordionItemHeaders = document.querySelectorAll(".accordion-item-header")
 
 accordionItemHeaders.forEach(accordionItemHeader => {
   accordionItemHeader.addEventListener("click", event => {
-    
-    
     accordionItemHeader.classList.toggle("active");
     const accordionItemBody = accordionItemHeader.nextElementSibling;
     if(accordionItemHeader.classList.contains("active")) {
@@ -50,6 +48,5 @@ accordionItemHeaders.forEach(accordionItemHeader => {
     else {
       accordionItemBody.style.maxHeight = 0;
     }
-    
   });
 });
