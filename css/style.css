@@ -27,7 +27,7 @@ body {
   align-items: center;
   justify-content: space-around;
   padding: 10px;
-  background-color: #108f25;
+  background-color: #0c8520;
   position: fixed;
   z-index: 2;
   width: 100%;
@@ -165,8 +165,8 @@ body {
   width: 8%;
   height: 4px;
   border: 0px;
-  border-top: 1px solid #109727;
-  background-color: #109727;
+  border-top: 1px solid  #32A041;
+  background-color:  #32A041;
   margin: 0 600px;
 }
 
@@ -181,7 +181,7 @@ body {
 }
 
 .conteudo-titulo-ifmaker span:hover {
-  color: #19ad32;
+  color:  #32A041;
 }
 
 .conteudo-texto-ifmaker {
@@ -230,7 +230,7 @@ body {
   height: 150px;
   width: 200px;
   cursor: pointer;
-  border-left: #109727 solid 5px;
+  border-left:  #32A041 solid 5px;
   padding: 0 0 0 8px;
   border-radius: 2px;
 }
@@ -385,7 +385,7 @@ body {
 
 .conteudo-card-equipe-uni {
   flex-direction: column;
-  background: linear-gradient(68.15deg, #2edf4b 16.62%, #0de631 85.61%);
+  background: linear-gradient(68.15deg, #29c53c 16.62%, #20bd3a 85.61%);
   box-shadow: -5px 5px 10px -7px #292c28;
   padding: 40px 20px 40px 20px;
   width: 320px;
@@ -397,7 +397,7 @@ body {
 }
 
 .conteudo-card-equipe-uni h4:hover {
-  color: #087a1b;
+  color: #03330c;
 }
 
 .conteudo-card-texto-equipe {
@@ -412,7 +412,7 @@ body {
 .conteudo-numeros {
   background: #20bd3a;
   padding: 10px 0 30px 0;
-  margin: 0 0 140px 0;
+  margin: 0 0 90px 0;
 }
 
 .conteudo-cards-numeros {
@@ -489,6 +489,10 @@ body {
   background-color: #717171;
 }
 
+.active2 {
+  background-color: rgb(54, 189, 54);
+}
+
 
 .fade {
   animation-name: fade;
@@ -531,7 +535,8 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  text-align: center;
+  text-align: left;
+  gap: 180px;
 }
 .accordion-item {
   background-color: rgb(54, 189, 54);
@@ -549,6 +554,7 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 .accordion-item-header::after {
   content: "\002B";
@@ -573,7 +579,7 @@ body {
 
 .conteudo-botao-faq {
   display: block;
-  background-color: #1e2518;
+  background-color: #0f130c;
   width: 100px;
   height: 30px;
   border: none;
@@ -583,7 +589,8 @@ body {
   font-weight: 200;
   font-size: 15px;
   color: #fff;
-  margin: 10px 0 0 0; 
+  margin: 10px 0 0 0;
+  cursor: pointer;
 }
 
 @media(max-width:767px) {

@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Física e Programação</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+ 
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
   </head>
-  <script src="js/script.js">
-
-  </script>
+  <script src="js/script.js"></script>
+  <script src="js/script-accordion.js" defer></script>
   <body>
     <header class="cabecalho">
-      <img class="cabecalho-imagem" src="img/ifmslogo.png" alt="Logo do IFMS">
+      <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
       <nav class="cabecalho-menu">
-        <a class="cabecalho-menu-item" href="#inicio-p">Início</a>
-        <a class="cabecalho-menu-item" href="#ifmaker-p">IFMaker</a>
-        <a class="cabecalho-menu-item" href="#experimentos-div">Experimentos</a>
+        <a class="cabecalho-menu-item" href="#inicio-pag">Início</a>
+        <a class="cabecalho-menu-item" href="#ifmaker-pag">IFMaker</a>
+        <a class="cabecalho-menu-item" href="#experimentos-pag">Experimentos</a>
         <a class="cabecalho-menu-item" href="#contato-pag">Equipe</a>
         <a class="cabecalho-menu-item" href="#faq-pag">FAQ</a>
-        <a class="cabecalho-menu-item" href="#contact-section">Contato</a>
+        <a class="cabecalho-menu-item" href="#contato-pag">Contato</a>
       </nav>
     </header>
 
-    <main class="conteudo" id="inicio-p">
+    <main class="conteudo" id="inicio-pag">
       <section class="conteudo-principal">
         <div class="conteudo-principal-escrito">
           <div class="conteudo-principal-escrito1">
@@ -33,18 +32,19 @@
             <h1 class="conteudo-principal-escrito-titulo">mais Experimental</h1>
           </div>
           <h2 class="conteudo-principal-escrito-subtitulo">Uma metodologia diferenciada...</h2>
-          <a href="#experimentos-div"><button class="conteudo-principal-escrito-botao">Ver Experimentos</button></a>
+          <a href="#experimentos-pag"><button class="conteudo-principal-escrito-botao">Ver Experimentos</button></a>
         </div>
         <div class="icons- wrapper">
           <img class="conteudo-principal-imagem icon" src="img/ifmaker-icon.png" alt="Imagem da logo do IFMaker">
         </div>
       </section>
 
-      <div class="conteudo-titulo-ifmaker" id="ifmaker-p">
+      <section id="ifmaker-pag">
+      <div class="conteudo-titulo-ifmaker">
         <h2><span>IF</span>Maker</h2>
         <hr>
       </div>
-      <section class="conteudo-ifmaker">
+      <div class="conteudo-ifmaker">
 
         <div class="conteudo-texto-ifmaker">
           <h5>
@@ -155,9 +155,13 @@
           </div>
         </div>
         </div>
+      </div>
       </section>
+
+
+      <section id="experimentos-pag">
       <h3 class="conteudo-subtitulo-experimentos-1">Experimentos</h3>
-      <div class="exp" id="experimentos-div">
+      <div class="exp">
         <nav>
           <a href="#" class="testando-hover">
             <div class="ex">
@@ -207,6 +211,10 @@
           </a>
         </nav>
       </div>
+      </section>
+
+
+      <section>
       <div class="slideTest">
         <h3 class="conteudo-subtitulo-quipe-2">Testemunhas</h3>
         <hr id="line-tes">
@@ -352,8 +360,9 @@
           <span class="dot" onclick="currentSlide(2)"></span>
         </div>
       </div> -->
+    </section>
 
-        <section id="contato-pag">
+        <section id="equipe-pag">
           <div class="conteudo-equipe">
             <h1 class="conteudo-titulo-quipe-1">Nossa <span class="conteudo-titulo-quipe-2">Equipe</span></h1>
             <h3 class="conteudo-subtitulo-quipe-1">Conheça a nossa <span>equipe</span>!</h3>
@@ -470,6 +479,7 @@
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
           </div>
+          </section>
 
 
           <section>
@@ -505,7 +515,6 @@
             <h1>FAQ</h1>
             <h3>Para realizar os experimentos conheça<br> o arduino e os componentes!</h3>
           </div>
-          
           <div class="accordion">
             <div class="accordion-item">
               <div class="accordion-item-header">
@@ -523,25 +532,21 @@
               <img src="https://img.icons8.com/ios/344/000000/arduino-uno-board.png" alt="imagem do arduino">
             </div>
           </div>
-
           </div>
-          
         </section>
 
-        <div class="cont">
-          <div class="contact-container">
-            <div class="left-col">
-            </div>
-            <div class="right-col">
-              <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                  <input type="checkbox" id="checkbox">
 
-                </label>
-
-              </div>
-
-              <section class="oi" id="contact-section">
+              <section class="oi" id="contato-pag">
+                <div class="cont">
+                  <div class="contact-container">
+                    <div class="left-col">
+                    </div>
+                    <div class="right-col">
+                      <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                          <input type="checkbox" id="checkbox">
+                        </label>
+                      </div>
 
                 <h2>Formulário de contato</h2>
 
@@ -560,7 +565,7 @@
                 <div id="error"></div>
                 <div id="success-msg"></div>
             </div>
-            <div>
+            <section>
               <H3 class="loc">LOCALIZAÇÃO</H3>
               <p class="loc2">
                 Br 060 S/N Saida P, Jardim - MS, 79240-000
@@ -583,6 +588,9 @@
                     <img src="img/icons8-reproduzir-youtube-150.png" alt="logo do Youtube" width="40">
                   </i>
                 <hr id="line">
+                </div>
+                </div>
+              </section>
            
 
     </main>
