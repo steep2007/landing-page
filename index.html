@@ -6,14 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Física e Programação</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-responsivo.css">
     <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
   </head>
   <script src="js/script.js"></script>
   <script src="js/script-accordion.js" defer></script>
   <script src="js/script-scroll.js" defer></script>
+  <script src="js/script-menuhamburguer.js" defer></script>
   <body>
     <header class="cabecalho">
       <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
+
+      <div class="menu-section">
+        <div class="menu-toggle">
+          <div class="one"></div>
+          <div class="two"></div>
+          <div class="three"></div>
+          <!--<div class="for"></div>
+          <div class="five"></div>
+          <div class="six"></div>-->
+        </div>
+
       <nav class="cabecalho-menu">
         <a class="cabecalho-menu-item" href="#inicio-pag">Início</a>
         <a class="cabecalho-menu-item" href="#ifmaker-pag">IFMaker</a>
@@ -294,7 +307,7 @@
               </div>
           </nav>
           <nav>
-              <div class="test">
+              <div class="test" id="card-delete">
                 <div class="ftu">
                   <div class="ft">
                     <img src="img/icons8-usuário-30.png" alt="icon">
@@ -318,7 +331,7 @@
               </div>
           </nav>
           <nav>
-              <div class="test">
+              <div class="test" id="card-delete2">
                 <div class="ftu">
                   <div class="ft">
                     <img src="img/icons8-usuário-30.png" alt="icon">
