@@ -1,4 +1,4 @@
-const menuItems = document.querySelectorAll('.cabecalho-menu a[href^="#"]');
+const menuItems2 = document.querySelectorAll('.cabecalho-menu a[href^="index.html"]');
 
 function getScrollTopByHref(element) {
 	const id = element.getAttribute('href');
@@ -20,7 +20,7 @@ function scrollToIdOnClick(event) {
 	scrollToPosition(to);
 }
 
-menuItems.forEach(item => {
+menuItems2.forEach(item => {
 	item.addEventListener('click', scrollToIdOnClick);
 });
 
