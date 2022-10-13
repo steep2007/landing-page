@@ -5,22 +5,55 @@
     display: none;
   }
 
+  #borda-header {
+    border-bottom: 2px solid #FFF;
+    width: 400px;
+    font-family: 'Nunito', sans-serif;
+    margin-block: 2px;
+    text-decoration: none;
+    color: #FFF2E7;
+    position: relative;
+  }
+
+
+  .cabecalho-menu-item::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color:#FFF;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  
+  .cabecalho-menu-item:hover::after {
+    transform: scaleX(1);
+  }
+
   .one,
   .two,
   .three {
         background-color: #000;
-        height: 5px;
+        height: 4px;
         width: 100%;
         margin: 6px auto;
+        border-radius: 20px;
+        border: 3px #000;
 
         transition-duration: 0.3s;
     }
 
     .menu-toggle {
-        width: 40px;
-        height: 30px;
+        width: 42px;
+        height: 42px;
         margin-right: 20px;
+        cursor: pointer;
     }
+
 
     /* fullscreen */
     .menu-section.on {
@@ -29,15 +62,18 @@
         left:0;
 
         width: 100vw;
-        height: 100vh;
+        height: 65vh;
 
         background-color: #0c8520;
+        opacity: 2;
         
         z-index: 10;
 
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+        text-align: initial;
+        
     }
 
     .menu-section.on nav {
@@ -48,10 +84,21 @@
         position: absolute;
         right: 25px;
         top: 15px;
+        border: 3px solid #000;
+        border-radius: 5px;
     }
 
+    .menu-section.on .menu-toggle:hover {
+      border: 3px solid rgb(17, 80, 22);
+    }
+
+    /*.one:hover,
+    .three:hover{
+      background-color: rgb(17, 80, 22);
+    }*/
+
     .menu-section.on .menu-toggle .one {
-        transform: rotate(40deg) translate(7px, 7px);
+        transform: rotate(41deg) translate(8px, 10px);
     }
 
     .menu-section.on .menu-toggle .two {
@@ -59,17 +106,17 @@
     }
 
     .menu-section.on .menu-toggle .three {
-        transform: rotate(-40deg) translate(8px, -9px);
+        transform: rotate(-41deg) translate(3px, -5px);
     }
 
     .menu-section.on nav  {
-        text-align: center;
+        text-align: left;
         display: block;
     }
 
     .menu-section.on nav a {
         transition-duration: 0.5s;
-        font-size: 2rem;
+        font-size: 25px;
         line-height: 4rem;
         display: block;
         
@@ -163,6 +210,45 @@
     display: none;
   }
 
+  .conteudo-card-equipe-uni {
+    width: 100%;
+    padding: 40px 20px 40px 20px;
+    margin: 0 10% 0 0;
+  }
+
+  .conteudo-equipe hr {
+    margin: 0 40%
+  }
+  
+  .conteudo-card-equipe {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .conteudo-card-equipe2 {
+    margin: 8% auto 8% auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards-equipe-respon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .conteudo-equipe-carrossel {
+    display: none;
+  }
+
+
 
 }
 
@@ -181,7 +267,12 @@
   }
 
   #line-tes {
-    display: none;
+    margin: 0 42%;
+    width: 16%;
+  }
+
+  .conteudo-equipe hr {
+    margin: 0 40%
   }
 
 }
@@ -305,3 +396,46 @@
   }
 
 }
+
+@media (max-width: 1250px) and (min-width: 700px){
+  .conteudo-card-equipe-uni {
+    width: 320px;
+    padding: 40px 20px 40px 20px;
+    gap: 5%;
+    margin: 0 10% 0 0;
+  }
+
+  .conteudo-equipe hr {
+    margin: 0 40%
+  }
+  
+  .conteudo-card-equipe {
+    margin: auto;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .conteudo-card-equipe2 {
+    margin: 0 8%;
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards-equipe-respon {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+  }
+  .conteudo-equipe-carrossel {
+    display: none;
+  }
+
+  }
+

@@ -36,7 +36,7 @@ function showSlides(n) {
 }
 
 ///////////////////////////////////////////////////////////////////
-function myFunction() {
-  document.getElementById("menu").value = window.history.back().value;
+// function myFunction() {
+  // document.getElementById("menu").value = window.history.back().value;
  // window.history.back = window.location.href = "#ifmaker-pag";
-}
+//}
