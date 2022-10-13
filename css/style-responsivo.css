@@ -126,6 +126,16 @@
 
 @media (max-width: 800px) {
   .conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+  
+  .conteudo-principal-escrito h1, h2 {
+    text-align: initial;
+  }
+  .conteudo-principal-escrito {
     display: block;
   }
 
@@ -141,6 +151,7 @@
     width: 180px;
     height: 40px;
     font-size: 18px;
+    margin: 4% 0 0 0;
   }
 
   .conteudo-principal-imagem {
@@ -279,6 +290,16 @@
 
 @media (max-width: 1220px) and (min-width: 700px) {
   .conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+  
+  .conteudo-principal-escrito h1, h2 {
+    text-align: initial;
+  }
+  .conteudo-principal-escrito {
     display: block;
   }
 
@@ -294,6 +315,7 @@
     width: 180px;
     height: 40px;
     font-size: 18px;
+    margin: 4% 0 0 0;
   }
 
   .conteudo-principal-imagem {
@@ -395,6 +417,17 @@
     padding: 0 5% 0 0;
   }
 
+  .conteudo-cards-numeros {
+    flex-direction: column;
+    gap: 5%;
+  }
+
+  .conteudo-cards-uni {
+    padding: 5% 3% 5% 3%;
+    width: 100%;
+    margin: 5% 3% 0 3%;
+  }
+
 }
 
 @media (max-width: 1250px) and (min-width: 700px){
@@ -439,3 +472,15 @@
 
   }
 
+  @media (max-width: 1345px) and (min-width: 331px){
+    .conteudo-cards-numeros {
+      flex-direction: column;
+      gap: 5%;
+    }
+
+    .conteudo-cards-uni {
+      padding: 5% 3% 5% 3%;
+      width: 50%;
+      margin: 5% 0 0 0;
+    }
+  }
