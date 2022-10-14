@@ -1,4 +1,4 @@
-const menuItems = document.querySelectorAll('.cabecalho-menu a[href^="#"]');
+const menuItems = document.querySelectorAll('.cabecalho-menu a, .conteudo-principal-escrito [href^="#"]');
 
 function getScrollTopByHref(element) {
 	const id = element.getAttribute('href');

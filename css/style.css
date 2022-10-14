@@ -126,7 +126,7 @@ body {
 }
 
 .conteudo-principal-escrito-botao:hover {
-  background-color: rgba(1, 231, 13, 0.801);
+  background-color: #29c53c /*rgba(1, 231, 13, 0.801)*/;
   cursor: pointer;
 }
 
