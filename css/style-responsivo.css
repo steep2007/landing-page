@@ -55,7 +55,7 @@
     }
 
 
-    /* fullscreen */
+    /* fullscreen *//*
     .menu-section.on {
         position: absolute;
         top:100%;
@@ -97,7 +97,7 @@
       background-color: rgb(17, 80, 22);
     }*/
 
-    .menu-section.on .menu-toggle .one {
+   /* .menu-section.on .menu-toggle .one {
         transform: rotate(41deg) translate(8px, 10px);
     }
 
