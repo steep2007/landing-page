@@ -167,7 +167,7 @@ body {
   border: 0px;
   border-top: 1px solid  #32A041;
   background-color:  #32A041;
-  margin: 0 600px;
+  margin: 0 46%;
 }
 
 .conteudo-titulo-ifmaker {
@@ -390,6 +390,7 @@ body {
   padding: 40px 20px 40px 20px;
   width: 320px;
   font-weight: 800;
+  border-radius: 5px;
 }
 
 .conteudo-card-equipe-uni img {
@@ -445,6 +446,10 @@ body {
   border-radius: 10px;
   padding: 80px 20px 80px 20px;
   width: 320px;
+}
+
+.popopo {
+  padding: 0 0 24% 0;
 }
 
 .conteudo-cards-uni span {
