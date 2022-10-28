@@ -492,9 +492,9 @@ body {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+/* .active, .dot:hover {
   background-color: #717171;
-}
+} */
 
 .active2 {
   background-color: rgb(54, 189, 54);
@@ -1244,3 +1244,8 @@ padding-top: 80px;}
   border: 0px;
   background-color: #000000;
 }
+
+
+
+
+
