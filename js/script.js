@@ -8,7 +8,7 @@ function closeModal(id) {
     element.classList.remove("show-modal");
 }
 
-let slideIndex = 1;
+let slideIndex = 0;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -31,7 +31,7 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
+ // slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
 

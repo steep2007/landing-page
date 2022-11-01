@@ -7,10 +7,10 @@ function getScrollTopByHref(element) {
 
 function scrollToPosition(to) {
   // Caso queira o nativo apenas
-	// window.scroll({
-	// top: to,
+	 //window.scroll({
+	// top: to - 80,
 	// behavior: "smooth",
-	// })
+	 })
   smoothScrollTo(0, to);
 }
 
