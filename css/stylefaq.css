@@ -24,3 +24,303 @@
       margin: 0 435px;
   }
   }
+  @media (max-width: 1325px) and (min-width: 1308px)  {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 435px;
+  }
+  }
+
+  @media (max-width: 1300px) and (min-width: 1272px)   {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 420px;
+  }
+  }
+  @media (max-width: 1272px) and (min-width: 1242px)    {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;    
+      background-color: #32A041;
+      margin: 0 407px;
+  }
+  }
+  @media (max-width: 1241px) and (min-width: 1192px)      {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 390px;
+  }
+  }
+  @media (max-width: 1193px) and (min-width: 1150px)    {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 365px;
+  }
+  }
+  @media (max-width: 1149px) and (min-width: 1130px)  {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 360px;
+  } 
+  }
+  @media (max-width: 1129px) and (min-width: 1075px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 335px;
+  } 
+  }
+  @media (max-width: 1074px) and (min-width: 1010px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 10%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 300px;
+  } 
+  }
+  @media (max-width: 1009px) and (min-width: 950px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 15%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 250px;
+  } 
+  }
+  @media (max-width: 949px)  and (min-width: 897px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 15%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 235px;
+  } 
+  }
+  @media (max-width: 896px) and (min-width: 857px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 18%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 198px;
+  } 
+  }
+  @media (max-width: 856px) and (min-width: 806px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 15%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 180px;
+  } 
+  }
+  @media (max-width: 805px) and (min-width: 769px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 20%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 165px;
+  } 
+  }
+  @media (max-width: 768px) and (min-width: 723px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 20%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 149px;
+
+  } 
+  }
+    @media (max-width: 722px) and (min-width: 678px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 20%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 130px;
+  } 
+  }
+  @media (max-width: 677px) and (min-width: 640px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 20%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 110px;
+  } 
+  .pag-img-faq img {
+    padding: 3% 0 1% 0;
+
+}
+  }
+  @media (max-width: 639px) and (min-width: 600px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 30%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 85px;
+  } 
+  }
+  @media (max-width: 599px) and (min-width: 550px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 30%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 70px;
+  } 
+  }
+
+  @media (max-width: 549px) and (min-width: 505px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 40%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 40px;
+  } 
+  }
+  @media (max-width: 504px)  and (min-width: 480px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 50%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 29px;
+  } 
+  }
+  @media (max-width: 479px)  and (min-width: 444px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 75%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 10px;
+  } 
+  }
+
+  @media (max-width: 443px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 110%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 10px;
+  } 
+  
+  }
+  
+  
+
+
+
