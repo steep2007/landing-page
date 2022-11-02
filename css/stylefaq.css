@@ -1,0 +1,26 @@
+@media (max-width: 1366px){
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 448px;
+  }
+  }
+  @media (max-width: 1366px) and (min-width: 1326px) {
+    
+    .pag-conteudo-titulo-faq hr {
+      text-align: center;
+      left: 100%;
+      width: 8%;
+      height: 4px;
+      border: 0px;
+      border-top: 1px solid #32A041;
+      background-color: #32A041;
+      margin: 0 435px;
+  }
+  }
