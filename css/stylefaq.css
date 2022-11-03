@@ -318,6 +318,13 @@
       margin: 0 10px;
   } 
   
+  .conteudo-contato{
+    
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  
   }
   
   

@@ -836,6 +836,9 @@ body {
   font-size: 0.625rem;
 }
 
+.textcont{
+  font-size: 30px;
+}
 form {
   width: 31.25rem;
   position: relative;
@@ -1032,7 +1035,7 @@ input:checked + .slider:before {
 .loc{
   padding-left: 16%;
   margin-top: 25%;
-  font-size: 30px;
+  font-size: 20px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
 }
@@ -1040,28 +1043,27 @@ input:checked + .slider:before {
 
   padding-left: 15.9%;
   padding-top: 5%;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Poppins', sans-serif;
   
 }
 .loc3{
 
   padding-left: 15.9%;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Poppins', sans-serif;
 }
 .cont4{
   padding-left: 15%;
   margin-top: 10%;
-  font-size: 25px;
+  font-size: 20px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
 }
-.icon{
+.iconcont{
   display: inline-block;
   font-size: 44px;
-  animation: float 5s ease-in-out
-  infinite ;
+  
 }
 .insta{
   animation-delay: 1s;
@@ -1086,13 +1088,13 @@ input:checked + .slider:before {
 }
 .icon2{
   padding-top: 8%;
-  padding-left: 22%;
+  padding-left: 16%;
 }
 #line {
   position: absolute;
   text-align: center;
-  left: 1%;
-  width: 100%;
+  right: 32%;
+  width: 11%;
   height: 3px;
   border: 0px;
   background-color: #000000;
