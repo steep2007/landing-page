@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@200;300;400;500;700&display=swap');
+@import "compass/css3";
 
 :root {
   --primary-color: #010712;
@@ -836,6 +837,9 @@ body {
   font-size: 0.625rem;
 }
 
+.textcont{
+  font-size: 30px;
+}
 form {
   width: 31.25rem;
   position: relative;
@@ -1032,7 +1036,7 @@ input:checked + .slider:before {
 .loc{
   padding-left: 16%;
   margin-top: 25%;
-  font-size: 30px;
+  font-size: 20px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
 }
@@ -1040,28 +1044,27 @@ input:checked + .slider:before {
 
   padding-left: 15.9%;
   padding-top: 5%;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Poppins', sans-serif;
   
 }
 .loc3{
 
   padding-left: 15.9%;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Poppins', sans-serif;
 }
 .cont4{
   padding-left: 15%;
   margin-top: 10%;
-  font-size: 25px;
+  font-size: 20px;
   color: #FFF;
   font-family: 'Poppins', sans-serif;
 }
-.icon{
+.iconcont{
   display: inline-block;
   font-size: 44px;
-  animation: float 5s ease-in-out
-  infinite ;
+  
 }
 .insta{
   animation-delay: 1s;
@@ -1086,13 +1089,13 @@ input:checked + .slider:before {
 }
 .icon2{
   padding-top: 8%;
-  padding-left: 22%;
+  padding-left: 16%;
 }
 #line {
   position: absolute;
   text-align: center;
-  left: 1%;
-  width: 100%;
+  right: 32%;
+  width: 11%;
   height: 3px;
   border: 0px;
   background-color: #000000;
@@ -1245,6 +1248,22 @@ padding-top: 80px;}
   border: 0px;
   background-color: #000000;
 }
+
+
+.box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  left: 78rem;
+  top: 35rem;
+  background-color: rgb(12, 133, 32);
+ align-items: center;
+}
+
+
+
 
 
 
