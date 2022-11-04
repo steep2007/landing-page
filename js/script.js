@@ -1,3 +1,4 @@
+
 function showModal(id) {
     var element = document.getElementById(id);
     element.classList.add("show-modal");
@@ -8,18 +9,17 @@ function closeModal(id) {
     element.classList.remove("show-modal");
 }
 
-let slideIndex = 0;
-showSlides(slideIndex);
+// var slideIndex = 1;
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+// function currentSlide(n) {
+  
+//   showSlides(slideIndex = n);
+// }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+
 
 function showSlides(n) {
+  let slideIndex = n;
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
@@ -34,6 +34,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
 
 ///////////////////////////////////////////////////////////////////
 // function myFunction() {
@@ -60,3 +61,8 @@ function showSlides(n) {
 Philips ambilight tv
 Üzerine gleince duruyor slide
 */
+
+function ano(){
+  let data = new Date();
+  document.getElementById('datayear').innerHTML = data.getFullYear();
+}

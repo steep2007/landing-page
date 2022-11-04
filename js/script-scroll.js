@@ -17,7 +17,9 @@ function scrollToPosition(to) {
 function scrollToIdOnClick(event) {
 	event.preventDefault();
 	const to = getScrollTopByHref(event.currentTarget)- 80;
+  alert(event.currentTarget)
 	scrollToPosition(to);
+  return event.currentTarget;
 }
 
 menuItems.forEach(item => {
@@ -56,3 +58,14 @@ function smoothScrollTo(endX, endY, duration) {
     window.scroll(newX, newY);
   }, 1000 / 60); // 60 fps
 };
+
+
+$( document ).ready(function() {
+  var urlHash = window.location.href;
+ // const to = getScrollTopByHref(urlHash)- 80;
+ scrollToPosition(window.scrollY-80)
+ 
+ //alert(urlHash)
+
+ 
+});

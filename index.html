@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="css/style-responsivo.css">
     <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
   </head>
-  <script src="js/script.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <script src="js/script-accordion.js" defer></script>
   <script src="js/script-scroll.js" defer></script>
   <script src="js/script-menuhamburguer.js" defer></script>
 
-  <body>
+
+  <body onload="showSlides(1)">
     <header class="cabecalho">
       <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
 
@@ -59,28 +62,53 @@
 
           <div class="conteudo-texto-ifmaker">
             <h5>
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+              Boy I, boy I, boy I know
+I know you got the feels (yeah!)
+Boy I, boy I, boy I know
 
-              AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Uh, I'm so curious
+'Bout you, boy, wanna keep it cool
+But I know every time you move
+Got me frozen, I get so shy, it's obvious
+
+Catching feels like butterflies
+If I say what's on my mind
+Would I hit bullseye?
+Shoot! I'm ready, aim and fire
+
+Baby, I, woah
+Feel like cupid's alive
+Ali-i-ive tonight
+Yeah, tonight
+If your heart beats the same way, let me know
+'Cause I'm boom-boom-boom
+From head to toe and I, you know
+
+I know love, it is such a funny thing
+A mystery allure
+Gotta get to know you more
+'Cause I, I can feel a real connection
+A supernatural attraction, ah
+I got the feels for you, yeah
+Yeah, yeah, yeah
+You have stolen my heart, oh, yeah
+Never let it go, oh, oh
+No, never let it go, oh, oh, oh
+Lightning straight to my heart, oh, yeah
+I got all the feels for sure
+Yeah, I got all the feels for ya
+Boy I, boy I, boy I know
+I know I get the feels
+Boy I, boy I, boy I know
+I know you feel it too
+
+Sway in the moonlight, dance in the dark
+I, I know that I caught your eye
+Are we on the same vibe?
+I wonder what's on your mind
+
+'Cause you got me good and I wanna be ya boo
+If it's dumb, well, I wanna be a fool
             </h5>
           </div>
 
@@ -377,7 +405,7 @@
         </div>
 
         <div class="cards-equipe-respon">
-          <div class="slideshow-container">
+         <div class="slideshow-container">
 
             <div class="mySlides fade">
               <div class="conteudo-card-equipe">
@@ -430,9 +458,9 @@
                 </div>
               </div>
             </div>
-          </div>
+         <!--</div>-->
 
-          <div class="slideshow-container">
+          <!--<div class="slideshow-container">-->
             <div class="mySlides fade">
               <div class="conteudo-card-equipe2">
                 <div class="conteudo-card-equipe-uni">
@@ -482,14 +510,16 @@
                     </p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
+
         <br>
         <div class="conteudo-equipe-carrossel">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="showSlides(1)"></span>
+          <span class="dot" onclick="showSlides(2)"></span>
         </div>
       </section>
 
@@ -615,7 +645,7 @@
 
     <footer class="conteudo-footer">
       <hr class="linha-footer">
-      <h2>©2022-2022 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.</h2>
+      <h2>©2022-<span id="datayear"></span> Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.</h2>
     </footer>
 
   </body>

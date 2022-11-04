@@ -7,9 +7,24 @@
     <title>FAQ - Física e Programação</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
-</head>
-<script src="js/script-scroll-faq.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="js/script-scroll-faq.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>-->
+
+<!--<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+
+<script>
+  (function($){
+    $(document).on("ready", function () {
+        var urlHash = window.location.href.split("#")[1];
+        $('html,body').animate({
+            scrollTop: $('.' + urlHash + ', #' + urlHash +',[name='+urlHash+']').first().offset().top -100
+        }, 1000);
+    });
+  })(jQuery);
+</script>
+</head>
+
 <body>
     <header class="cabecalho">
         <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
