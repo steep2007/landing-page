@@ -405,7 +405,7 @@ body {
 }
 
 .conteudo-card-texto-equipe {
-  padding: 10px 0 0 0;
+  /*padding: 10px 0 0 0;*/
 }
 
 .conteudo-equipe-carrossel {
@@ -680,8 +680,10 @@ body {
   padding: 20px 0 20px 0;
 }
 
-.pag-conteudo-footer-faq h2 {
-  padding: 15px 0 0 0;
+#texto-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -727,7 +729,7 @@ body {
   border: 0px;
   background-color: #000000;
 }*/
-.testando-hover{
+.ando-hover{
   color: pink;
 }
 .testando-hover::hover{
@@ -1169,7 +1171,7 @@ input:checked + .slider:before {
 }
 
 
-  .teste5{
+  /* .teste5{
 
   display: flex;
   flex-direction: row;
@@ -1178,14 +1180,20 @@ input:checked + .slider:before {
   background: linear-gradient(68.15deg, rgb(255, 255, 255) 16.62%, rgb(255, 255, 255) 85.61%);
   padding-bottom: 40px;
   padding-top: 30px;
-}
+} */
+
 .test2 {
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
 padding-bottom: 50px;
-padding-top: 80px;}
+padding-top: 80px;
+}
+
+.testemunho-card-2 {
+  display: none;
+}
 
 .test{
   background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  33%, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
