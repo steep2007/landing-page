@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@200;300;400;500;700&display=swap');
 
 @media (max-width: 900px) {
-  /* .cabecalho-menu {
+   .cabecalho-menu {
     display: none;
   }
-
+/*
   #borda-header {
     border-bottom: 2px solid #FFF;
     width: 400px;
