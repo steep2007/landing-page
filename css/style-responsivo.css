@@ -312,15 +312,38 @@
 }
 
 @media (max-width: 1350px) and (min-width: 680px) { 
-  .testemunho-card-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+  /* .testemunho-card-1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    } */
 
-  .testemunho-card-2 {
-    display: none;
+    .card-test-del {
+      display: none;
+    }
+
+    .test {
+      margin: 0 0 8% 10%;
+      width: 80%;
+      background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  90px /*45%*/, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
+    }
+
+    #line-tes {
+      margin: 0 42%;
+      width: 16%;
+    }
+
+    .conteudo-equipe hr {
+      margin: 0 40%
+    }
+
+}
+
+ @media (max-width: 679px){
+  .test2 {
+    display: flex;
+    flex-direction: column;
   }
 
   .test {
@@ -329,35 +352,10 @@
     background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  90px /*45%*/, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
   }
 
-  #line-tes {
-    margin: 0 42%;
-    width: 16%;
-  }
-
-  .conteudo-equipe hr {
-    margin: 0 40%
-  }
-
-}
-
-/* @media (max-width: 679px){
-  .testemunho-card-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .testemunho-card-2 {
+  .card-test-del {
     display: none;
   }
 
-  .test {
-    margin: 0 0 8% 10%;
-    width: 80%;
-    background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  90px /*45%*//*, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
-  }
-
   #line-tes {
     margin: 0 42%;
     width: 16%;
@@ -366,7 +364,7 @@
   .conteudo-equipe hr {
     margin: 0 40%
   }
-} */
+}
 
 @media (max-width: 1220px) and (min-width: 700px) {
   .conteudo-principal-escrito {
@@ -375,7 +373,7 @@
     gap: 32px;
     text-align: center;
   }
-  
+
   .conteudo-principal-escrito h1, h2 {
     text-align: initial;
   }
@@ -525,7 +523,7 @@
   .conteudo-equipe hr {
     margin: 0 40%
   }
-  
+
   .conteudo-card-equipe {
     margin: auto;
     width: 320px;
@@ -536,7 +534,7 @@
   }
 
   .conteudo-card-equipe2 {
-    margin: 0 8%;
+    /* margin: 0 8%; */
     width: 320px;
     display: flex;
     justify-content: center;
@@ -647,13 +645,17 @@
     }
 
     .form {
-      width: 30%;
+      width: unset;
       margin-top: 5%;
       padding: 3% 0;
     }
 
     input, textarea, label {
-      width: 50%;
+      width: /*50%*/ 70%;
+    }
+
+    label {
+      width: unset;
     }
 
     .cont label {
@@ -698,6 +700,9 @@
       width: auto;
       height: auto;
       padding: 5% 3%;
+      display: inline-grid;
+      justify-content: center;
+      text-align: left;
   }
 
   .left-col {
@@ -774,6 +779,14 @@
       padding: 5% 3%;
   }
 
+  .right-col {
+    width: unset;
+    height: unset;
+    display: inline-grid;
+    justify-content: center;
+    text-align: left;
+  }
+
   .left-col {
     width: auto;
     height: auto;
@@ -802,6 +815,5 @@
 /* 
 .box {
   display: none;
-} */
-
+}  */
   }

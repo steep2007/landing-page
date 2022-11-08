@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@200;300;400;500;700&display=swap');
-@import "compass/css3";
+/* @import "compass/css3"; */
 
 :root {
   --primary-color: #010712;
@@ -397,15 +397,15 @@ body {
 }
 
 .conteudo-card-equipe-uni img {
-  padding: 0 0 10px 0;
+  padding: 10% 0 10px 0;
 }
 
 .conteudo-card-equipe-uni h4:hover {
   color: #03330c;
 }
 
-.conteudo-card-texto-equipe {
-  /*padding: 10px 0 0 0;*/
+.conteudo-card-texto-equipe img {
+  padding: 10% 0 0 0;
 }
 
 .conteudo-equipe-carrossel {
@@ -1167,7 +1167,7 @@ input:checked + .slider:before {
   border: 0px;
   border-top: 1px solid #109727;
   background-color: #109727;
-  margin: 0 715px;
+  margin: 0 42.5%;
 }
 
 
@@ -1186,14 +1186,25 @@ input:checked + .slider:before {
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: space-around;
+justify-content: space-around; 
 padding-bottom: 50px;
 padding-top: 80px;
+
+}
+
+/* .testemunho-card-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .testemunho-card-2 {
-  display: none;
-}
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+} */
 
 .test{
   background: linear-gradient(to bottom, #20bd3a  32%, #20bd3a  33%, rgb(235, 225, 225) 31%, rgb(235, 225, 225) 100%);
@@ -1243,9 +1254,9 @@ padding-top: 80px;
   padding: 20px 0 20px 0;
 }
 
-.conteudo-footer h2 {
+/* .conteudo-footer h2 {
   padding: 15px 0 0 0;
-}
+} */
 
 .linha-footer {
   position: absolute;
@@ -1268,6 +1279,7 @@ padding-top: 80px;
   top: 35rem;
   background-color: rgb(12, 133, 32);
  align-items: center;
+ display: none;
 }
 
 

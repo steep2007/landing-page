@@ -66,3 +66,4 @@ function ano(){
   let data = new Date();
   document.getElementById('datayear').innerHTML = data.getFullYear();
 }
+

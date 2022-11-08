@@ -59,10 +59,10 @@ function smoothScrollTo(endX, endY, duration) {
 
 $( document ).ready(function() {
        var urlHash = window.location.href.split("href")[1];
-      console.log(urlHash)
-      console.log("asdsada");
+      // console.log(urlHash)
+      // console.log("asdsada");
       var urlHash = window.location.href.split("href")[1];
-      alert(urlHash)
+      // alert(urlHash)
       $('html,body').animate({
           scrollTop: $('#' + urlHash +',[name='+urlHash+']').first().offsetTop().top -100
       }, 1000);
