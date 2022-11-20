@@ -638,6 +638,7 @@
 
 
   @media (max-width: 800px) and ((min-width: 325px)) {
+
     .contact-container {
       flex-direction: column;
       align-items: center;
@@ -648,6 +649,10 @@
       width: unset;
       margin-top: 5%;
       padding: 3% 0;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
 
     input, textarea, label {
@@ -719,6 +724,10 @@
   }
 
   @media (max-width: 324px) {
+    .textcont {
+      font-size: 140%;
+  }
+
     .contact-container {
       flex-direction: column;
       align-items: center;
@@ -729,6 +738,10 @@
       width: 30%;
       margin-top: 5%;
       padding: 3% 0;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     }
 
     input, textarea, label {
