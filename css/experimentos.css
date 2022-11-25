@@ -1,0 +1,186 @@
+.conteudo-faq-texto-titulo-subtitulo {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .conteudo-faq-texto-titulo-subtitulo h1 {
+    font-size: 30px;
+  }
+  .conteudo-faq-texto-lado h2 {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .conteudo-faq-texto2 {
+    background-color: #087a1b;
+  }
+  
+  .accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    gap: 180px;
+  }
+  .accordion-item {
+    background-color: rgb(54, 189, 54);
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+  }
+  .accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  .accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+  }
+  .accordion-item-header.active2::after {
+    content: "\2212";
+  }
+  
+  
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #000, transparent) 1;
+  }
+  
+  .conteudo-botao-faq {
+    display: block;
+    background-color: #0f130c;
+    width: 100px;
+    height: 30px;
+    border: none;
+    box-shadow: 4px 5px 4px rgba(19, 16, 16, 0.25);
+    border-radius: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    color: #fff;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+  }
+  
+  @media(max-width:767px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  .pag-conteudo-titulo-faq hr {
+    text-align: center;
+    left: 100%;
+    width: 8%;
+    height: 4px;
+    border: 0px;
+    border-top: 1px solid  #32A041;
+    background-color:  #32A041;
+    margin: 0 600px;
+ 
+  }
+  
+  .pag-conteudo-titulo-faq {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    margin: /*250px*/ 30px 0 10px 0;
+    padding: 0 190px;
+  }
+  
+  .pag-conteudo-faq {
+    text-align: justify;
+    align-items: center;
+  }
+  
+  .pag-img-comp-faq img{
+    padding: 1% 0 1% 0;
+  }
+  
+  .pag-img-faq {
+    text-align: center;
+    padding: 2% 0;
+  }
+  
+  .pag-img-faq img {
+    padding: 3% 0 1% 0;
+  }
+  
+  .pag-conteudo-texto-faq {
+    align-items: center;
+    padding: 3% 20% 0 20%;
+    margin: 0 0 5% 0;
+  }
+  
+  .pag-conteudo-texto-faq h2 {
+    font-family: 'Poppins', sans-serif;
+    padding: 1% 1% 2%;
+  }
+  
+  .pag-conteudo-texto-faq h3 {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .pag-conteudo-texto-faq h4 {
+    font-family: 'Nunito', sans-serif;
+    
+    font-weight: bold;
+  }
+  
+  .pag-conteudo-footer-faq {
+    margin: 0;
+    text-align: center;
+    background-color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #000000;
+    padding: 20px 0 20px 0;
+  }
+  
+  .pag-conteudo-footer-faq h2 {
+    padding: 15px 0 0 0;
+  }
+  .contex {
+    font-family: 'Nunito', sans-serif;
+    
+    font-weight: bold;
+  }
+
+
+
+
+/* 
+  #####################
+  #######################
+  ########################## */
+
+
+  .tittleexperi{
+    font-size: 100%;
+  }
+  
+  

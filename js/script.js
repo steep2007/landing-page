@@ -67,3 +67,11 @@ function ano(){
   document.getElementById('datayear').innerHTML = data.getFullYear();
 }
 
+<<<<<<< HEAD
+=======
+function removerPadding() {
+  const el = document.getElementById('testeMAKER')
+  el.style.removeProperty('padding');
+
+}
+>>>>>>> 705a73e (experimentos)

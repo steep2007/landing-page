@@ -327,7 +327,16 @@
   
   }
   
+      
+
+  @media (max-width: 375px) {
+    .conteudo-img-ifmaker-lab.style.removeProperty('padding');
+    /* conteudo-img-ifmaker-lab.replace('padding', '0'); */
+    /* .conteudo-img-ifmaker-lab {
+      flex-direction: column;
+      gap: 38px;
+      /* padding: 0 0 0 100px; */
+  } 
   
-
-
+  
 
