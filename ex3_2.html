@@ -44,7 +44,7 @@
 
             <section id="faq-pag">
                 <div class="pag-conteudo-titulo-faq">
-                    <h2 class="tittleexperi">Primeira e Segunda lei de Ohm</h2>
+                    <h2 class="tittleexperi"> Fotorresistividade de um semicondutor</h2>
                     <hr>
                 </div>
                 <div class="pag-conteudo-faq">
@@ -52,114 +52,89 @@
                     <div class="pag-conteudo-texto-faq">
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
-                        <p class="contex">A primeira Lei de Ohm afirma que a corrente elétrica é diretamente
-                            proporcional à diferença de potência aplicada.
-                            Já a segunda Lei de Ohm, diz que a resistência elétrica do condutor tem relação direta com
-                            constituição do material e é proporcional ao seu comprimento.
-                            A Segunda lei de Ohm relaciona as características físicas que determinam a resistência de um
-                            condutor:
+                        <p class="contex">Um resistor dependente de luz (do inglês LDR) é constituído basicamente de um
+                            material semicondutor cuja resistência é determinada pela intensidade da luz incidente.
+                            A resistência de um LDR é alterada em função da variação da resistividade do material
+                            semicondutor que o constitui, a explicação para essa alteração é o efeito fotoelétrico que
+                            consiste na emissão de elétrons em um metal, quando exposto a certas frequências de luz.
+                            No LDR os elétrons não chegam a ser emitidos do material, mas a energia dos fótons de luz é
+                            suficiente para que os elétrons saiam da banda de valência para a banda de condução, o que
+                            implica na diminuição da resistência elétrica do material.
+
 
                         </p>
-                        <div class="pag-img-faq">
-                            <img src="img/ohm.webp" width="20%" alt="Primeira lei de ohm">
-                            <h4>A resistência elétrica é determinada pela resistividade elétrica (𝜌), a área da seção
-                                transversal (A) do condutor e seu comprimento(L) </h4>
-
-                        </div>
 
                         <h2>
-                            Fundamentos Teóricos
+                            Montagem:
                         </h2>
 
-                        <p class="contex">Cada material apresenta uma resistência distinta que é calculada pela razão
-                            entre a tensão (U) e a corrente elétrica(i) no material, para a compreensão da resistência
-                            elétrica nos materiais, que a priori tratam-se das dificuldades de movimento, enfrentada
-                            pelos elétrons nos condutores, quando submetido a uma diferença de potencial.
+                        <p class="contex">
+                            O LDR e o resistor estarão em série e na divisão de tensão relacionada a um dos terminais do
+                            LDR será inserido um condutor conectado a porta analógica zero (A0) do Arduino. Essa porta
+                            receberá os valores referentes à tensão elétrica entre os terminais do LDR. Os valores
+                            indicam a medida da intensidade luminosa incidente sobre o LDR. Ao preparar a montagem é
+                            importante que o dispositivo fique em um local escuro, onde a luz mais intensa seja a do
+                            LED, pois, quanto mais luz, menos resitência do LRD.
+
                         </p>
 
-                        <img src="img/leis-de-ohm-segunda-lei.jpg" width="15%" alt="Segunda lei de ohm">
-                        <h4>A resistência elétrica é determinada pela resistividade elétrica (𝜌), a área da seção
-                            transversal (A) do condutor e seu comprimento(L) </h4>
-
-
-                        <h2>Montagem: </h2>
-
+                        <br>
                         <p class="contex">
-                            Observe a disposição de cada componente na Figura 1. Os elementos que serão analisados serão
-                            o resistor, que está associado em paralelo com o LED, e o potenciômetro. A análise do
-                            resistor consistirá no registro das tensões e da corrente para averiguação da Primeira Lei
-                            de Ohm. O potenciômetro, tem sua resistência modificada quando alterada a posição angular do
-                            seu eixo de rotação. Essa modificação ocorre devido a variação no comprimento do condutor.
-                            Nesse caso, o potenciômetro demonstrará a aplicabilidade da Segunda lei de Ohm.
-
-
-                        </p>
-                        <p class="contex">
-                            O calor latente de vaporização da água é de 540 cal/g. Ou seja, são necessárias 540 cal para
-                            evaporar 1 g de água a 100 °C. Nesse caso, a quantidade de calor necessária (Q) é
-                            proporcional à massa da substância (m):
-
+                            Materiais e componentes:
                         </p>
                         <br>
                         <p class="contex">
-                            Materiais e componentes utilizados:
+                            • LDR
 
                         </p>
-                        <br>
+                        <p class="contex">
+                            • LED
+
+                        </p>
+                        <p class="contex">
+                            • Resistor 10kΩ
+
+
+                        </p>
+                        <p class="contex">
+                            • Resistor 330Ω
+
+                        </p>
                         <p class="contex">
                             • Arduino
 
+                        </p>
+                        <p class="contex">
+                            • 02 Protoboard
 
                         </p>
                         <p class="contex">
-                            • Fios jumpers
+                            • Jumpers
 
                         </p>
                         <p class="contex">
-                            • 2 resistores de 330Ω (laranja-laranja-marrom)
-
-
-                        </p>
-                        <p class="contex">
-                            • 01 Potenciômetros 10kΩ
-
-                        </p>
-                        <p class="contex">
-                            • 01 LED
-
-                        </p>
-                        <p class="contex">
-                            • Multímetro (opcional)
+                            • Régua ou trena
 
 
                         </p>
                         <div class="pag-img-faq">
-                            <img src="img/Captura de tela de 2022-11-26 10-01-58.png" width="50%" alt="">
+                            <img src="img/Captura de tela de 2022-11-26 11-02-29.png" width="50%" alt="">
                         </div>
                         <h2>
-                            Execução e coleta de dados: </h2>
+                            CODIGO???????????????????/ </h2>
+                        <h2>
+                            Execução de dados:
+                        </h2>
 
                         <p class="contex">
-                            Depois de fazer todos os procedimentos, conecte seu Arduino ao computador e faça o
-                            upload do código. Abra o Monitor Serial (crtl+shift+m) e verifique se os valores são
-                            mostrados. Se tudo estiver correto ao findar o upload e iniciar o monitor serial será
-                            exibido informações parecidas com estas:
+                            Após concluir os procedimentos, conecte seu Arduino ao computador e faça o upload do código.
+                            Abra o Monitor Serial (crtl+shift+m) e averigue se os valores são mostrados. Se tudo estiver
+                            correto a cada 1 segundo o valor do LDR será atualizado em uma nova linha.
 
-                        </p>
-                        <div class="pag-img-faq">
-                            <img src="img//Captura de tela de 2022-11-26 10-05-35.png" width="55%" alt="">
-                        </div>
-                        <p class="contex">
-                            Os valores que serão exibidos a cada 2 segundos serão: a resistência Rx do potenciômetro em
-                            quiloohms(kΩ); a tensão U (em volts) no resistor R; e a corrente i (em ampère) no resistor
-                            R, conforme Quadro 3 Enquanto o Monitor exibe os valores, gire cuidadosamente o
-                            potenciômetro variando sua resistência, partindo do seu mínimo até o máximo. Registre na
-                            tabela 1 a seguir os valores exibidos no monitor. Depois de fixada a posição do
-                            potenciômetro, caso as medidas oscilem, anote os valores que mais se repetem, ou para maior
-                            precisão, calcule a média aritmética dos valores.
 
 
                         </p>
+
                     </div>
                 </div>
 
