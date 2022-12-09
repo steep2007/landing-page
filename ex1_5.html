@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ - Física e Programação</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/experimentos.css">
+        <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/stylefaq.css">
+    </head>
+    <script src="js/script-scroll-faq.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <body>
+        <header class="cabecalho">
+            <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
+            <nav class="cabecalho-menu">
+                <a class="cabecalho-menu-item" href="index.html">Início</a>
+                <a class="cabecalho-menu-item" href="index.html#ifmaker-pag">IFMaker</a>
+                <a class="cabecalho-menu-item" href="index.html#experimentos-pag">Experimentos</a>
+                <a class="cabecalho-menu-item" href="index.html#equipe-pag">Equipe</a>
+                <a class="cabecalho-menu-item" href="index.html#faq-pag">FAQ</a>
+                <a class="cabecalho-menu-item" href="index.html#contato-pag">Contato</a>
+            </nav>
+        </header>
+
+        <main class="conteudo" id="inicio-pag">
+            <!--<section class="conteudo-principal">
+          <div class="conteudo-principal-escrito">
+            <div class="conteudo-principal-escrito1">
+              <h1 class="conteudo-principal-escrito-titulo">Um Ensino de Física</h1>
+              <h1 class="conteudo-principal-escrito-titulo">mais Experimental</h1>
+            </div>
+            <h2 class="conteudo-principal-escrito-subtitulo">Uma metodologia diferenciada...</h2>
+            <a href="index.html"><button class="conteudo-principal-escrito-botao">Voltar</button></a>
+          </div>
+          <div class="icons- wrapper">
+            <img class="conteudo-principal-imagem icon" src="img/ifmaker-icon.png" alt="Imagem da logo do IFMaker">
+          </div>
+        </section>-->
+
+            <section id="faq-pag">
+                <div class="pag-conteudo-titulo-faq">
+                    <h2 class="tittleexperi">Força Peso</h2>
+                    <hr>
+                </div>
+                <div class="pag-conteudo-faq">
+
+                    <div class="pag-conteudo-texto-faq">
+                        <h2 class="contex">1.1 Introdução</h2>
+                        <br>
+                        <p class="contex">
+                            A força peso de um corpo é a força gravitacional, exclusivamente atrativa, produzida por um
+                            segundo corpo de grande massa, como a Terra, por exemplo.
+                            De acordo com a lei da gravitação universal, quando dois corpos possuem massa, eles sofrem
+                            uma força atrativa.
+                            Força peso, força gravitacional ou simplesmente peso são fundamentalmente a mesma coisa, no
+                            entanto, é bastante comum pensarmos que peso e massa são a mesma coisa, quando na verdade
+                            são coisas diferentes. Enquanto o peso é uma força medida em newtons (N), a massa de um
+                            corpo é a quantidade de matéria nele contida, medida em quilogramas (kg).
+                        </p>
+
+                        <h2>Experimento</h2>
+
+                        <p class="contex">
+                            Nesse experimento nós vamos usar os seguintes materiais:
+                        </p>
+                        <p class="contex">• Dinamômetro </p>
+                        <p class="contex">• Massas aferidas </p>
+                        <p class="contex">• Arduino</p>
+                        <p class="contex">• Resistor 10 kΩ</p>
+                        <p class="contex">• Protoboard </p>
+                        <p class="contex">• Jumpers </p>
+                        <p class="contex">• Laser </p>
+                        <p class="contex">• LD</p>
+                        <p class="contex"> A intenção da automação é permitir a aferição da força peso, em newtons, de
+                            objetos. Com o Arduino vai possível análise do peso, na superfície da Terra e até em outros
+                            corpos celestes.
+                            No monitor serial será possível verificar o peso na Terra, na Lua, no Sol e nos demais
+                            planetas do sistema solar, até mesmo Plutão
+
+                        </p>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-25 23-30-52.png" width="50%" alt="Arduino Uno">
+                        </div>
+                        <p class="contex">Para executar este experimento é importante desmontar o dinamômetro para fixar
+                            o módulo laser/LDR em uma posição a, aproximadamente, 1cm acima da extremidade móvel
+                            inferior da mola do dinamômetro. Essa mesma extremidade deverá estar pintada com cor clara,
+                            o que permite a reflexão do laser e devida sensibilização do LDR. Veja a Figura 1.
+                        </p>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-25 23-45-41.png" width="50%" alt="Arduino Uno">
+                        </div>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-25 23-46-38.png" width="50%" alt="Arduino Uno">
+                        </div>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-25 23-48-14.png" width="50%" alt="Arduino Uno">
+                        </div>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-25 23-49-14.png" width="50%" alt="Arduino Uno">
+                        </div>
+                        <p class="contex">
+                            Inicie o Monitor serial e note que após a introdução do experimento que é exibida no Monitor
+                            serial, aparecerá a mensagem: "Calibrando o dinamômetro"
+                            Será o momento de calibrar o dinamômetro para só então dar início às medidas.
+                            A mensagem seguinte será: "posicione o dinamômetro na posição inicial"
+                            A partir da exibição da mensagem você terá apenas 5 segundos para deixar o dinamômetro em
+                            sua posição inicial, ou seja, sem nenhuma massa suspensa em sua extremidade inferior Arduino
+                            & Ensino de Física, aguarde até que surja a mensagem para o próximo procedimento.
+                            Caso não consiga efetuar este procedimento dentro dos 5 segundo reinicie o monitor Serial,
+                            ou o Arduino, e repita.
+                            Caso consiga em 5 segundos a próxima mensagem será: "Agora posicione o dinamômetro na
+                            posição final"
+                            Este é o último procedimento e consiste em apenas estender a mola do Arduino até sua marca
+                            máxima, correspondente ao valor máximo da força que o mesmo pode registrar. Também deverá
+                            ser mantida essa posição durante os 5 após a exibição da mensagem. Tudo pronto, você já pode
+                            medir o peso da massa que você escolheu!
+
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="pag-conteudo-footer-faq">
+            <hr class="linha-footer">
+            <h2>©2022-2022 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.<br>
+                Campus Jardim: Rodovia BR 060, s/nº, saída para Bela Vista – Jardim/MS – CEP: 79240-000<br>
+                Telefone: (67) 3209-0200</h2>
+        </footer>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ - Física e Programação</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/experimentos.css">
+        <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/stylefaq.css">
+    </head>
+    <script src="js/script-scroll-faq.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <body>
+        <header class="cabecalho">
+            <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
+            <nav class="cabecalho-menu">
+                <a class="cabecalho-menu-item" href="index.html">Início</a>
+                <a class="cabecalho-menu-item" href="index.html#ifmaker-pag">IFMaker</a>
+                <a class="cabecalho-menu-item" href="index.html#experimentos-pag">Experimentos</a>
+                <a class="cabecalho-menu-item" href="index.html#equipe-pag">Equipe</a>
+                <a class="cabecalho-menu-item" href="index.html#faq-pag">FAQ</a>
+                <a class="cabecalho-menu-item" href="index.html#contato-pag">Contato</a>
+            </nav>
+        </header>
+
+        <main class="conteudo" id="inicio-pag">
+            <!--<section class="conteudo-principal">
+          <div class="conteudo-principal-escrito">
+            <div class="conteudo-principal-escrito1">
+              <h1 class="conteudo-principal-escrito-titulo">Um Ensino de Física</h1>
+              <h1 class="conteudo-principal-escrito-titulo">mais Experimental</h1>
+            </div>
+            <h2 class="conteudo-principal-escrito-subtitulo">Uma metodologia diferenciada...</h2>
+            <a href="index.html"><button class="conteudo-principal-escrito-botao">Voltar</button></a>
+          </div>
+          <div class="icons- wrapper">
+            <img class="conteudo-principal-imagem icon" src="img/ifmaker-icon.png" alt="Imagem da logo do IFMaker">
+          </div>
+        </section>-->
+
+            <section id="faq-pag">
+                <div class="pag-conteudo-titulo-faq">
+                    <h2 class="tittleexperi"> Fotorresistividade de um semicondutor</h2>
+                    <hr>
+                </div>
+                <div class="pag-conteudo-faq">
+
+                    <div class="pag-conteudo-texto-faq">
+                        <h2 class="contex">1.1 Introdução</h2>
+                        <br>
+                        <p class="contex">Um resistor dependente de luz (do inglês LDR) é constituído basicamente de um
+                            material semicondutor cuja resistência é determinada pela intensidade da luz incidente.
+                            A resistência de um LDR é alterada em função da variação da resistividade do material
+                            semicondutor que o constitui, a explicação para essa alteração é o efeito fotoelétrico que
+                            consiste na emissão de elétrons em um metal, quando exposto a certas frequências de luz.
+                            No LDR os elétrons não chegam a ser emitidos do material, mas a energia dos fótons de luz é
+                            suficiente para que os elétrons saiam da banda de valência para a banda de condução, o que
+                            implica na diminuição da resistência elétrica do material.
+
+
+                        </p>
+
+                        <h2>
+                            Montagem:
+                        </h2>
+
+                        <p class="contex">
+                            O LDR e o resistor estarão em série e na divisão de tensão relacionada a um dos terminais do
+                            LDR será inserido um condutor conectado a porta analógica zero (A0) do Arduino. Essa porta
+                            receberá os valores referentes à tensão elétrica entre os terminais do LDR. Os valores
+                            indicam a medida da intensidade luminosa incidente sobre o LDR. Ao preparar a montagem é
+                            importante que o dispositivo fique em um local escuro, onde a luz mais intensa seja a do
+                            LED, pois, quanto mais luz, menos resitência do LRD.
+
+                        </p>
+
+                        <br>
+                        <p class="contex">
+                            Materiais e componentes:
+                        </p>
+                        <br>
+                        <p class="contex">
+                            • LDR
+
+                        </p>
+                        <p class="contex">
+                            • LED
+
+                        </p>
+                        <p class="contex">
+                            • Resistor 10kΩ
+
+
+                        </p>
+                        <p class="contex">
+                            • Resistor 330Ω
+
+                        </p>
+                        <p class="contex">
+                            • Arduino
+
+                        </p>
+                        <p class="contex">
+                            • 02 Protoboard
+
+                        </p>
+                        <p class="contex">
+                            • Jumpers
+
+                        </p>
+                        <p class="contex">
+                            • Régua ou trena
+
+
+                        </p>
+                        <div class="pag-img-faq">
+                            <img src="img/Captura de tela de 2022-11-26 11-02-29.png" width="50%" alt="">
+                        </div>
+                        <h2>
+                            CODIGO???????????????????/ </h2>
+                        <h2>
+                            Execução de dados:
+                        </h2>
+
+                        <p class="contex">
+                            Após concluir os procedimentos, conecte seu Arduino ao computador e faça o upload do código.
+                            Abra o Monitor Serial (crtl+shift+m) e averigue se os valores são mostrados. Se tudo estiver
+                            correto a cada 1 segundo o valor do LDR será atualizado em uma nova linha.
+
+
+
+                        </p>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+        </main>
+
+        <footer class="pag-conteudo-footer-faq">
+            <hr class="linha-footer">
+            <h2>©2022-2022 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.<br>
+                Campus Jardim: Rodovia BR 060, s/nº, saída para Bela Vista – Jardim/MS – CEP: 79240-000<br>
+                Telefone: (67) 3209-0200</h2>
+        </footer>
+
+
+    </body>
+
+</html>

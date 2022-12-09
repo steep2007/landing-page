@@ -1253,6 +1253,9 @@ padding-top: 80px;
   margin-top: 18px;
 }
 
+.tittleexperi{
+  font-size: 100%;
+}
    
 
 
@@ -1301,8 +1304,8 @@ padding-top: 80px;
   border-radius: 50%;
   position: fixed;
   z-index: 1000;
-  left: 78rem;
-  top: 35rem;
+  left: 38rem;
+  top: 30rem;
   background-color: rgb(12, 133, 32);
  align-items: center;
  display: none;

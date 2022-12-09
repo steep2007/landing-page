@@ -67,3 +67,8 @@ function ano(){
   document.getElementById('datayear').innerHTML = data.getFullYear();
 }
 
+function removerPadding() {
+  const el = document.getElementById('testeMAKER')
+  el.style.removeProperty('padding');
+
+}

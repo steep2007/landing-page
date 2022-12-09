@@ -64,8 +64,19 @@ $( document ).ready(function() {
   var urlHash = window.location.href;
  // const to = getScrollTopByHref(urlHash)- 80;
  scrollToPosition(window.scrollY-80)
+ let ball = document.getElementById('bolinha');
+
+  console.log(screeSize)
  
+  console.log(b)
  //alert(urlHash)
 
  
 });
+
+window.onresize = function(event) {
+  var r = document.querySelector('.box');
+ screeSize = screen.width/20.9;
+ b = screeSize + "rem";
+ r.style.setProperty('left', b);
+};
