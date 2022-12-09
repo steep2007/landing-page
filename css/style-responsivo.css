@@ -197,7 +197,7 @@
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
   .exp {
     display: block;
     flex-direction: column;
@@ -210,6 +210,9 @@
     width: 80%;
     margin: 0 0 8% 10%;
   }
+}
+
+@media (max-width: 700px) {
 
   .conteudo-subtitulo-experimentos-1 {
     font-size: 25px;
