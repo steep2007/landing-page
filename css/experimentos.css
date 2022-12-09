@@ -187,5 +187,34 @@
     font-weight: bold;
     background-color: rgb(217, 218, 228);
   }
+
+  .exper{
+    margin-top: 10%;
+    margin-left: 25%;
+
+  }
   
-  
+
+.tituloex{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  margin: /*250px*/ 30px 0 10px 0;
+  padding: 0 190px;
+}
+
+.tituloex hr {
+
+
+  text-align: center;
+  left: 100%;
+  width: 37%;
+  height: 4px;
+  border: 0px;
+  border-top: 1px solid #32A041;
+  background-color: #32A041;
+  margin: 0 310px;
+
+}
