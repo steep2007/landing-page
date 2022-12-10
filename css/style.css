@@ -651,15 +651,47 @@ body {
   padding: 3% 0 1% 0;
 }
 
+.ex a {
+  color: #000;
+}
+
 .pag-conteudo-texto-faq {
   align-items: center;
   padding: 3% 20% 0 20%;
-  margin: 0 0 5% 0;
+  margin: 0 0 3% 0;
+}
+
+a:-webkit-any-link:active {
+  color: #0c8520;
+}
+
+.posicao {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 4%;
+  font-size: 130%;
+  font-family: 'Nunito';
+  font-weight: 900;
 }
 
 .pag-conteudo-texto-faq h2 {
   font-family: 'Poppins', sans-serif;
   padding: 2% 1% 2%;
+}
+
+.botao-impressora {
+  background-color: #20bd3a;
+  width: 280px;
+  height: 60px;
+  border: none;
+  box-shadow: 4px 5px 4px rgba(19, 16, 16, 0.25);
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: #1a1a1a;
+  
 }
 
 .pag-conteudo-texto-faq h3 {
@@ -913,7 +945,7 @@ textarea {
 
 }
 
-input:hover, textarea:hover, button:hover {
+input:hover, textarea:hover {
   opacity: 0.5;
 }
 
