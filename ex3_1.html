@@ -146,9 +146,80 @@
                             exibido informações parecidas com estas:
 
                         </p>
-                        <div class="pag-img-faq">
-                            <img src="img//Captura de tela de 2022-11-26 10-05-35.png" width="55%" alt="">
-                        </div>
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">/*MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FÍSICA-SBF
+                            <br>
+                            * INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO CEARÁ-IFCE <br>
+                            * UNIVERSIDADE ESTADUAL VALE DO ACARAÚ-UVA <br>
+                            * PRODUTO DESENVOLVIDO POR: OSÉIAS DE SOUSA MOURÃO <br>
+                            * <br>
+                            * Programa destinado para estudo das Leis de Ohm <br>
+                            */ <br>
+                            #define potenPin 0 // define a entrada analógica para o
+                            Potenciômetro <br>
+                            #define voltPin 2 // define a entrada analógica para o resistor <br>
+                            float Rx; // variável que armazena valor da resistência em
+                            OHM do potenciômetro 0 a 10k <br>
+                            float R0; // variável que armazena valor da resistência <br>
+                            float corrente; // variável para armazenar valor da corrente <br>
+                            float voltvalor; // cria variável para armazenar o valor da tensão
+                            do RESISTOR observado <br>
+                            float potenvalor; // cria variável para armazenar valor da
+                            resistência 0 a 1023. <br>
+                            float U; <br>
+                            float Ux; <br>
+                            void setup() <br>
+                            { <br>
+                            Serial.begin(9600); //inicial a serial <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FISICA -
+                            MNPEF"); <br>
+                            Serial.println("PRODUTO DESENVOLVIDO POR: OSEIAS MOURAO"); <br>
+                            Serial.println("....................................................."); <br>
+                            <br>
+                            delay(2000);//Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("PRIMEIRA E SEGUNDA LEI DE OHM"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            R0 = 330; // Você pode editar o valor de R. resistencia em Ohms para
+                            saber o valor exato use um ohmimetro, ou veja o código de cores para
+                            valor aproximado <br>
+                            Serial.println("Medidas para um Resistor de 330"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Pausa de 2 segundos <br>
+                            } <br>
+                            void loop() <br>
+                            { <br>
+                            voltvalor = analogRead(voltPin);// Lê o valor registrado no resistor e
+                            armazena na variável "voltvalor" <br>
+                            potenvalor = analogRead(potenPin);// Lê o valor registrado no
+                            potenciometro e armazena na variável "potenvalor" <br>
+                            U = voltvalor/204.6; <br>
+                            corrente = U/R0;//relação matemática para 1ª lei de Ohm. <br>
+                            Rx = -((potenvalor/102.3)-10); <br>
+                            Serial.println("...................................................."); <br>
+                            Serial.print("Resistencia do potenciometro em quiloohm Rx="); //Imprime
+                            na serial O TEXTO ENTRE ASPAS. <br>
+                            Serial.println(Rx); //Imprime na serial o valor da resistencia do
+                            potenciometro <br>
+                            Serial.print("Tensao (em Volts) no Resistor R U= "); //Imprime na <br>
+                            serial "tensão(em volts) = " <br>
+                            Serial.println(U); //Imprime na serial o valor lido <br>
+                            Serial.print("Corrente (em Ampere) no Resistor R i= "); <br>
+                            Serial.println(corrente, 6); //Imprime na serial o valor lido com 6
+                            casas decimais <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Aguarda 2 segundos <br>
+                            } <br>
+                        </p>
                         <p class="contex">
                             Os valores que serão exibidos a cada 2 segundos serão: a resistência Rx do potenciômetro em
                             quiloohms(kΩ); a tensão U (em volts) no resistor R; e a corrente i (em ampère) no resistor

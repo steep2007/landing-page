@@ -91,33 +91,154 @@
                             inferior da mola do dinamômetro. Essa mesma extremidade deverá estar pintada com cor clara,
                             o que permite a reflexão do laser e devida sensibilização do LDR. Veja a Figura 1.
                         </p>
-                        <div class="pag-img-faq">
-                            <img src="img/Captura de tela de 2022-11-25 23-45-41.png" width="50%" alt="Arduino Uno">
-                        </div>
-                        <div class="pag-img-faq">
-                            <img src="img/Captura de tela de 2022-11-25 23-46-38.png" width="50%" alt="Arduino Uno">
-                        </div>
-                        <div class="pag-img-faq">
-                            <img src="img/Captura de tela de 2022-11-25 23-48-14.png" width="50%" alt="Arduino Uno">
-                        </div>
-                        <div class="pag-img-faq">
-                            <img src="img/Captura de tela de 2022-11-25 23-49-14.png" width="50%" alt="Arduino Uno">
-                        </div>
+                        <h2>Código:</h2>
+                        <p style="background-color: #ebddcc;">
+                            /*MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FÍSICA-SBF <br>
+                            * INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO CEARÁ-IFCE <br>
+                            * UNIVERSIDADE ESTADUAL VALE DO ACARAÚ-UVA <br>
+                            * PRODUTO DESENVOLVIDO POR: OSÉIAS DE SOUSA MOURÃO <br>
+                            * <br>
+                            * Programa destinado para estudo da força <br>
+                            * peso de um objeto, <br>
+                            */ <br>
+                            char leitura; <br>
+                            int valorLDR; <br>
+                            int forcIN; <br>
+                            int forcFIM; <br>
+                            float valFOR; <br>
+                            int Fdim = 2; // ajuste aqui a medida(em N) máxima da força que pode
+                            ser registrada no seu dinamômetro <br>
+                            float FdimP; // variável armazena múltiplo de Fdim, para controlar
+                            precisão <br>
+                            void setup() <br> { <br>
+                            Serial.begin(9600); <br>
+
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FISICA -
+                            MNPEF"); <br>
+                            Serial.println("PRODUTO DESENVOLVIDO POR: OSEIAS MOURAO"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000);//Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("FORCA PESO"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("MEDINDO O PESO DE MASSAS AFERIDAS"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(1000); //Pausa de 2 segundos <br>
+                            Serial.println("Calibrando o dinamometro"); <br>
+                            delay(2000); <br>
+                            Serial.println("posicione o dinamometro na posicao inicial"); <br>
+                            delay(5000); <br>
+                            forcIN = analogRead(A0); <br>
+                            delay(1000);<br>
+                            Serial.println("..."); <br>
+                            Serial.println("Agora posicione o dinamometro na posicao final"); <br>
+                            delay(3000); <br>
+                            forcFIM = analogRead(A0); <br>
+                            delay(1000); <br>
+                            Serial.println("calibrado!"); <br>
+
+                            delay(1000); <br>
+                            Serial.println("para exibir o peso do objeto pressione a letra inicial
+                            do planeta e aperte Enter"); <br>
+                            Serial.println("Peso na Terra (T ou t)"); <br>
+                            Serial.println("Peso na Lua (L ou l)"); <br>
+                            Serial.println("Peso no Sol (S)"); <br>
+                            Serial.println("Peso em Venus (V ou v)"); <br>
+                            Serial.println("Peso em Mercurio (m)"); <br>
+                            Serial.println("Peso em Marte (M)"); <br>
+                            Serial.println("Peso em Jupiter (J ou j)"); <br>
+                            Serial.println("Peso em Saturno (s)"); <br>
+                            Serial.println("Peso em Netuno (N ou n)"); <br>
+                            Serial.println("Peso em Plutao (P ou p)"); <br>
+                            Serial.println("Peso em Urano (U ou u)"); <br>
+                            } <br>
+                            void loop() <br>{ <br>
+                            FdimP = Fdim*100.00; <br>
+                            valorLDR = analogRead(A0); <br>
+                            valFOR = map(valorLDR, forcFIM, forcIN, FdimP, 0.00); <br>
+                            delay(500); <br>
+                            while (Serial.available() > 0) { <br>
+                            //Lê o dado vindo da Serial e armazena na variável leitura
+                            leitura = Serial.read(); <br>
+                            if (leitura == 'T' || leitura =='t') <br>{// As duas || é a operação
+                            booleana OU <br>
+                            Serial.println("Peso na Terra:"); <br>
+                            Serial.print("F= "); <br>
+                            Serial.print(valFOR/100); <br>
+                            Serial.println(" N"); <br>
+                            if ((valFOR/100)< -0.02) { Serial.println("::::sensor descalibrado, calibre-o
+                                novamente::::"); <br> } } else if (leitura=='L' || leitura=='l' ){ Serial.println("Peso
+                                na
+                                Lua:"); Serial.print("F="); <br>
+                                Serial.print(valFOR/600); <br>
+                                Serial.println(" N"); } else if (leitura=='S' ){ Serial.println("Peso no Sol:"); <br>
+                                Serial.print("F=");<br>
+                                Serial.print(valFOR*28.02/100);
+                                Serial.println(" N"); } else if (leitura=='m' ){ Serial.println("Peso em Mercurio:");
+                                <br>
+                                Serial.print("F="); <br>
+                                Serial.print(valFOR*0.38/100); <br>
+                                Serial.println(" N"); } else if (leitura=='V' || leitura=='v' ){ Serial.println("Peso no
+                                Venus:"); Serial.print("F="); <br>
+                                Serial.print(valFOR*0.90/100);
+                                Serial.println(" N"); } else if (leitura=='M' ){ Serial.println("Peso em Marte:"); <br>
+                                Serial.print("F="); <br>
+                                Serial.print(valFOR*0.38/100); <br>
+                                Serial.println(" N"); } else if (leitura=='J' || leitura== 'j' ) <br>{
+                                Serial.println("Peso em
+                                Jupiter:"); Serial.print("F="); <br>
+                                Serial.print(valFOR*2.53/100); <br>
+                                Serial.println(" N"); } else if (leitura=='s' ) <br>{ Serial.println("Peso em
+                                Saturno:");
+                                Serial.print("F="); <br>
+                                Serial.print(valFOR*1.07/100); <br>
+                                Serial.println(" N"); } else if (leitura=='U' || leitura=='u' ) <br>
+                                { Serial.println("Peso em
+                                Urano:"); <br>
+                                Serial.print("F="); <br>
+                                Serial.print(valFOR*0.89/100); <br>
+                                Serial.println(" N"); } <br> else if (leitura=='N' || leitura=='n' ){
+                                Serial.println("Peso
+                                Netuno:"); Serial.print("F="); <br>
+                                Serial.print(valFOR*1.14/100); <br>
+                                Serial.println(" N"); } <br>
+                                else if (leitura=='P' || leitura=='p' ) <br>
+                                { Serial.println("Peso
+                                em Plutao:"); <br>
+                                Serial.print("F="); Serial.print(valFOR*0.07/100);
+                                Serial.println(" N"); } } } </p>
                         <p class="contex">
-                            Inicie o Monitor serial e note que após a introdução do experimento que é exibida no Monitor
+                            Inicie o Monitor serial e note que após a introdução do experimento que é exibida no
+                            Monitor
                             serial, aparecerá a mensagem: "Calibrando o dinamômetro"
                             Será o momento de calibrar o dinamômetro para só então dar início às medidas.
                             A mensagem seguinte será: "posicione o dinamômetro na posição inicial"
-                            A partir da exibição da mensagem você terá apenas 5 segundos para deixar o dinamômetro em
-                            sua posição inicial, ou seja, sem nenhuma massa suspensa em sua extremidade inferior Arduino
+                            A partir da exibição da mensagem você terá apenas 5 segundos para deixar o
+                            dinamômetro em
+                            sua posição inicial, ou seja, sem nenhuma massa suspensa em sua extremidade inferior
+                            Arduino
                             & Ensino de Física, aguarde até que surja a mensagem para o próximo procedimento.
-                            Caso não consiga efetuar este procedimento dentro dos 5 segundo reinicie o monitor Serial,
+                            Caso não consiga efetuar este procedimento dentro dos 5 segundo reinicie o monitor
+                            Serial,
                             ou o Arduino, e repita.
-                            Caso consiga em 5 segundos a próxima mensagem será: "Agora posicione o dinamômetro na
+                            Caso consiga em 5 segundos a próxima mensagem será: "Agora posicione o dinamômetro
+                            na
                             posição final"
-                            Este é o último procedimento e consiste em apenas estender a mola do Arduino até sua marca
-                            máxima, correspondente ao valor máximo da força que o mesmo pode registrar. Também deverá
-                            ser mantida essa posição durante os 5 após a exibição da mensagem. Tudo pronto, você já pode
+                            Este é o último procedimento e consiste em apenas estender a mola do Arduino até sua
+                            marca
+                            máxima, correspondente ao valor máximo da força que o mesmo pode registrar. Também
+                            deverá
+                            ser mantida essa posição durante os 5 após a exibição da mensagem. Tudo pronto, você
+                            já pode
                             medir o peso da massa que você escolheu!
 
                         </p>

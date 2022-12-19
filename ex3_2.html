@@ -120,8 +120,53 @@
                         <div class="pag-img-faq">
                             <img src="img/Captura de tela de 2022-11-26 11-02-29.png" width="50%" alt="">
                         </div>
-                        <h2>
-                            CODIGO???????????????????/ </h2>
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            /*MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FÍSICA-SBF <br>
+                            * INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO CEARÁ-IFCE <br>
+                            * UNIVERSIDADE ESTADUAL VALE DO ACARAÚ-UVA <br>
+                            * PRODUTO DESENVOLVIDO POR: OSÉIAS DE SOUSA MOURÃO <br>
+                            * <br>
+                            * Programa destinado para estudo da fotorresistiidade de um <br>
+                            semicondutor. <br>
+                            * O programa permite perceber a variação da resitência elétrica em
+                            materiais <br>
+                            * semicondutores quando variada a intensidade luminosa <br>
+                            * utiliza-se no Arduino um LDR e LED para verificar essa variação. <br>
+                            */ <br>
+                            int ldrPin = 0; // indica que o LDR deve esta no pino analógico 0 <br>
+                            int ldrValor = 0; // armazena medidas do LDR <br>
+                            void setup() <br>
+                            { <br>
+                            Serial.begin(9600); <br>
+                            digitalWrite(13,LOW); <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FISICA -
+                            MNPEF"); <br>
+                            Serial.println("PRODUTO DESENVOLVIDO POR: OSEIAS MOURAO"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000);//Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("FOTORRESISTIVIDADE DE UM SEMICONDUTOR"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Pausa de 2 segundos <br>
+                            Serial.println("::INICIE O EXPERIMENTO::"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(1000); //Pausa de 1 segundos <br>
+                            digitalWrite(13,HIGH); <br>
+                            } <br>
+                            void loop() { <br>
+                            ldrValor = analogRead(ldrPin); // lê o valor do LDR <br>
+                            delay(1000); // tempo de espera de 1 segundo <br>
+                            Serial.println(ldrValor); <br>
+                            } <br>
+
+                        </p>
                         <h2>
                             Execução de dados:
                         </h2>
