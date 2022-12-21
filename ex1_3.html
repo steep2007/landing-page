@@ -162,7 +162,7 @@
                             acontecendo uma transferência de momento linear entre as esferas, ocasionando a liberação da
                             última esfera, isso se repete até que a última esfera seja lançada.
                         </p>
-                        <h2>Experimento: cálculo da velocidade por meio do canhão de Gauss: :</h2>
+                        <h2>Experimento: cálculo da velocidade por meio do canhão de Gauss:</h2>
                         <p class="contex">
                             1° Análise: Método Teórico
                         </p>
@@ -244,7 +244,77 @@
                             • 2 resistores
                         </p>
                         <h2>Freio magnético:</h2>
-                        <h1>CODIGO?????????????????????/</h1>
+                        <h2>Código:</h2>
+                        <p style="background-color: #ebddcc;">
+
+                            unsigned long Inicio=0; <br>
+                            unsigned long finish=0; <br>
+                            float distance=0.6;
+
+                            <br>
+
+                            float interval; <br>
+                            float velocity; <br>
+                            done=1;
+                            <br>
+                            int FlagInicio=0;
+                            <br>
+                            int FlagFinal=0;
+                            <br>
+                            int starPin = 4; <br>
+                            int finishPin = 8; <br>
+                            <br>
+                            void setup () <br>
+                            { <br>
+                            Serial.begin(9600); <br>
+                            pinMode(startPin, INPUT_PULLUP); <br>
+                            pinMode(finishPin, INPUT_PULLUP); <br>
+                            Serial.printl("media de velocidade de projetil"); <br>
+
+                            } <br>
+                            void loop () <br>
+                            { <br>
+                            while (digitalRead(startPin)) ===LOW) <br>
+                            { <br>
+                            if (FlagInicio ==0) <br>
+                            { <br>
+                            Inicio = millis(); <br>
+                            Serial.println("inicio"); <br>
+                            FlagInicio = 1; <br>
+                            } <br>
+                            } <br>
+                            while(digitalRead(finishPin)) <br>
+                            { <br>
+                            if (FlagInicio === 1 ) <br>
+                            { <br>
+                            if (FlagFinal == 0) <br>
+                            { <br>
+                            finish = millis(); <br>
+                            Serial.print("Final"); <br>
+                            Serial.println(" "); <br>
+                            done=0; <br>
+                            FlagFinal = 1: <br>
+                            } <br>
+                            } <br>
+                            } <br>
+                            while(!done) <br>
+                            { <br>
+                            interval = float(finish-Inicio); <br>
+                            velocity = (distance/interval); <br>
+                            Serial.println("Velocidade do projetil"); <br>
+                            serial.print(velocity,4); <br>
+                            Serial.println("m/s"); <br>
+                            Serial.println("----------------------"); <br>
+                            done = 1; <br>
+                            FlagInicio = 0; <br>
+                            FlagFinal = 0; <br>
+                            finish = 0; <br>
+                            Inicio = 0; <br>
+                            } <br>
+                            } <br>
+
+
+                        </p>
                         <p class="contex">
 
                             O sistema do nosso freio magnético, terá uma força magnética que opõe sobre o movimento de

@@ -165,7 +165,134 @@
                             </h4>
                         </div>
 
-                        <h1>CODIGO?????????????????????</h1>
+                        <h2>Código:</h2>
+                        <p style="background-color: #ebddcc;">/*MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FÍSICA-SBF
+                            <br>
+                            * INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO CEARÁ-IFCE <br>
+                            * UNIVERSIDADE ESTADUAL VALE DO ACARAÚ-UVA
+                            <br>
+                            * PRODUTO DESENVOLVIDO POR: OSÉIAS DE SOUSA MOURÃO <br>
+                            * <br>
+                            * Programa destinado para estudo de Cinemática. <br>
+                            * O programa calcula o intervalo de tempo entre três sensores <br>
+                            infravermelho, <br>
+                            * e determina se o movimento é uniforme ou uniformemente variado <br>
+                            *Este programa poderá ser usado para se determinar a aceleração <br>
+                            gravitacional <br>
+                            */ <br>
+                            #define ledVerde 7 // O LED verde deverá ser ligado no pino digital 7 <br>
+                            #define ledVermelho 6 // O LED vermelho deverá ser ligado no pino digital 6 <br>
+                            #define sensorUM 2 // Configura o pino digital 2 para
+                            o PRIMEIRO SENSOR <br>
+                            #define sensorDOIS 3 // Configura o pino digital 3 para
+                            o SEGUNDO SENSOR <br>
+                            #define sensorTRES 4 // Configura o pino digital 4 para
+                            o TERCEIRO SENSOR <br>
+                            int estadoUM; // variável que guarda estado do
+                            primeiro sensor <br>
+                            int estadoDOIS; // variável que guarda estado do
+                            segundo sensor <br>
+                            int estadoTRES; // variável que guarda estado do
+                            terceiro sensor <br>
+                            long interTempoUM ; // tempo decorrido no primeiro
+                            intervalo <br>
+                            long interTempoDOIS ; // tempo decorrido no segundo
+                            intervalo <br>
+                            long instanteUM = 0; // tempo total decorrido desde que
+                            o programa foi executado <br>
+                            long instanteDOIS = 0; // tempo total decorrido desde que
+                            o programa foi executado <br>
+                            long instanteTRES= 0; // tempo total decorrido desde que
+                            o programa foi executado <br>
+                            long velocidadeUM; <br>
+                            long velocidadeDOIS; <br>
+                            long deslocamentoUM = 500; // distancia sugerida em milimetro
+                            <br>
+                            entre sensor 1 e 2. Mude a medida se for conveniente <br>
+                            long deslocamentoDOIS = 500; // distancia sugerida em milimetro
+                            entre sensor 2 e 3. Mude a medida se for conveniente
+                            <br>
+                            long tempoTotal; <br>
+                            long g; // aceleração gravitacional <br>
+                            void setup() <br>
+                            { <br>
+                            Serial.begin(9600); <br>
+                            <br>
+                            Serial.println("....................................................."); <br>
+                            Serial.println("MESTRADO NACIONAL PROFISSIONAL EM ENSINO DE FISICA - <br>
+                            MNPEF"); <br>
+                            Serial.println("PRODUTO DESENVOLVIDO POR: OSEIAS MOURAO"); <br>
+                            Serial.println("....................................................."); <br>
+                            delay(2000);//Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("CINEMATICA"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(2000); //Pausa de 2 segundos <br>
+                            Serial.println("....................................................."); <br>
+
+                            Serial.println("Afericao da Aceleracao Gravitacional (g)"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(1000); //Pausa de 2 segundos <br>
+                            Serial.println("::INICIE O EXPERIMENTO::"); <br>
+                            Serial.println("....................................................."); <br>
+
+                            delay(1000); //Pausa de 1 segundos <br>
+
+                            pinMode(ledVermelho, OUTPUT); // Configura o pino 6 como saída <br>
+
+                            pinMode(ledVerde, OUTPUT); // Configura o pin o 7 como saída <br>
+                            <br>
+                            pinMode(sensorUM, INPUT); // Configura o pino 2 como entrada <br>
+                            <br>
+                            pinMode(sensorDOIS, INPUT); // Configura o pino 3 como entrada
+                            <br>
+                            pinMode(sensorTRES, INPUT); // Configura o pino 4 como entrada <br>
+                            <br>
+                            digitalWrite(ledVermelho, LOW); // desliga LED vermelho <br>
+                            digitalWrite(ledVerde, LOW); // desliga LED verde <br>
+
+                            } <br>
+                            void loop() <br>
+                            { <br>
+                            estadoUM = digitalRead(sensorUM); // Ler o sensor UM e armazena <br>
+                            em estadoUM <br>
+                            if(estadoUM == HIGH){ <br>
+                            digitalWrite(ledVerde, HIGH); // Liga o LED VERDE <br>
+                            digitalWrite(ledVermelho, LOW); // desliga o LED VERMELHO <br>
+                            instanteUM = millis(); // armazena o tempo Total <br>
+                            decorrido para Sensor UM <br>
+
+                            } <br>
+
+                            interTempoDOIS = (instanteTRES - instanteDOIS); <br>
+                            velocidadeDOIS = deslocamentoDOIS/interTempoDOIS; // calculo da <br>
+                            velocidade média entre 1 e 2 sensor <br>
+                            g=((velocidadeDOIS*velocidadeDOIS)- <br>
+                            (velocidadeUM*velocidadeUM))/(2*deslocamentoDOIS); // eq. De <br>
+                            Torricelli <br>
+                            tempoTotal = interTempoDOIS; <br>
+                            Serial.println("........... ............................................
+                            .........."); <br>
+                            Serial.print(" |||| Aceleracao Gravitacional (em m/s^2) |||| g= "); <br>
+                            Serial.println(g); // imprime no monitor serial o valor <br>
+                            aproximado da aceleração gravitacional <br>
+                            Serial.println(".......................................................
+                            .........."); <br>
+                            Serial.println(".......................................................
+                            .........."); <br>
+                            delay(tempoTotal); //tempo de espera para efetuar nova leitura <br>
+                            } <br>
+                            else <br>
+                            { <br>
+                            digitalWrite(ledVerde, LOW); <br>
+                            digitalWrite(ledVermelho, LOW); // desliga LED verde e Vermelho <br>
+                            } <br>
+                            } <br>
+
+                        </p>
                         <h2>Execução e coleta de dados</h2>
                         <br>
                         <p class="contex">
