@@ -31,7 +31,7 @@
 
             <section id="faq-pag">
                 <div class="tituloex">
-                    <h2 class="tittleexperi"> Interface do termistor
+                    <h2 class="tittleexperi"> Iluminação pública
                     </h2>
 
                     <hr>
@@ -43,18 +43,180 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Nesse experimento, vamos criar postes de rua que ligam e desligam automaticamente, pois
+                            atualmente ainda existe um sistema manual de ligar e desligar os postes, fazendo com que o
+                            gasto de energia seja maior. Para conseguir fazer esse experimento vamos utilizar:
+                        </p>
+                        <p class="contex">
+                            • Arduino UNO Wifi Rev.2
+
+                        </p>
+                        <p class="contex">
+                            • LED
+                        </p>
+                        <p class="contex">
+                            • LDR, 1 Mohm
+                        </p>
+                        <p class="contex">
+                            • I - Impulso
+
+                        </p>
+                        <p class="contex">
+                            • Sensor de proximidade Digilent IR
+                        </p>
+                        <p class="contex">
+                            • Espressif ESP8266 ESP-12E
+                        </p>
+                        <p class="contex">
+                            • Resistor 1k Ohm
+                        </p>
+                        <p class="contex">
+                            • Breadboard, 170 Pin </p>
+                        <h2>Montagem:</h2>
+                        <img src="img/exp 9; maker.png" width="100%" alt="Arduino Uno">
+                        <h2>Circuito impresso:</h2>
+                        <img src="img/smart_iot_street_light_UHIld56oU7.png" width="70%" alt="Arduino Uno">
+                        <h2>Código:</h2>
+                        <p style="background-color: #ebddcc;">
+                            int smooth; <br>
+                            int LDR; <br>
+                            int threshold = 40;//sun's intensity <br>
+                            int brightness = 0; <br>
+                            int ledState = 0; <br>
+
+                            int sensor1 = 11; <br>
+                            int sensor2 = 8; <br>
+                            int sensor3 = 9; <br>
+
+                            int led1=5; <br>
+                            int led = 6; <br>
+                            int led2=2; <br>
+
+                            int carPresent = 0; <br>
+                            int carPresent1 = 0; <br>
+
+                            float beta = 0.65; <br>
+                            void setup() { <br>
+                            // put your setup code here, to run once: <br>
+                            Serial.begin(115200); <br>
+                            pinMode(sensor1, INPUT); <br>
+                            pinMode(sensor2, INPUT); <br>
+                            pinMode(sensor3, INPUT); <br>
+                            pinMode(led,OUTPUT); <br>
+                            pinMode(led1,OUTPUT); <br>
+                            pinMode(led2,OUTPUT); <br>
+                            } <br>
+
+
+                            void loop() { <br>
+                            smooth = smooth - (beta * (smooth - analogRead(A0))); <br>
+                            delay(1); <br>
+                            LDR = round(((float)smooth / 1023) * 100); <br>
+                            if (LDR <= 40) <br>
+                                brightness=0; <br>
+                                else <br>
+                                { <br>
+                                brightness = map(LDR, 40, 100, 0, 255); <br>
+                                } <br>
+                                checkSensors(); <br>
+                                if (carPresent == 1) <br>
+                                { <br>
+                                ledState = 1; <br>
+                                digitalWrite(led,HIGH); <br>
+                                digitalWrite(led1,HIGH); <br>
+                                analogWrite(led,brightness); <br>
+                                analogWrite(led1,brightness); <br>
+                                } <br>
+                                else if (carPresent == 0) <br>
+                                { <br>
+                                ledState = 0; <br>
+                                digitalWrite(led,HIGH); <br>
+                                //digitalWrite(led1,HIGH); <br>
+                                analogWrite(led,ledState); <br>
+                                //analogWrite(led1,ledState); <br>
+                                if(carPresent1 == 1) <br>
+                                { <br>
+                                ledState = 1; <br>
+                                if(ledState == 1) <br>
+                                { <br>
+
+                                analogWrite(led1,brightness); <br>
+                                analogWrite(led2,brightness); <br>
+                                } <br>
+                                } <br>
+
+                                else if (carPresent1 == 0) <br>
+                                { <br>
+                                ledState = 0; <br>
+                                digitalWrite(led1,HIGH); <br>
+                                digitalWrite(led2,HIGH); <br>
+                                analogWrite(led1,ledState); <br>
+                                analogWrite(led2,ledState); <br>
+                                } <br>
+                                } <br>
+
+                                String data = (String)ledState+","+(String)brightness+";"; <br>
+                                Serial.print(data); <br>
+                                // Serial.print(digitalRead(sensor1)); ,<br>
+                                // Serial.print("\t"); <br>
+                                // Serial.print(digitalRead(sensor2)); <br>
+                                // Serial.print("\t"); <br>
+                                // Serial.print(ledState);
+                                // Serial.print("\t"); <br>
+                                // Serial.println(brightness); <br>
+                                delay(100); <br>
+                                } <br>
+
+                                void checkSensors() <br>
+                                { <br>
+                                if (digitalRead(sensor1) == 0)//Car captured in 1st sensor <br>
+                                {
+                                <br>
+                                if (digitalRead(sensor2) == 1)//Car still didnt reach the 2nd sensor <br>
+                                carPresent = 1; <br>
+                                } <br>
+
+                                else if (digitalRead(sensor2) == 0)//Car reached the 2nd sensor <br>
+                                { //No cars detected behind the first car <br>
+                                if (digitalRead(sensor1) == 1) <br>
+                                { <br>
+                                carPresent = 0; <br>
+                                carPresent1 = 1; <br>
+                                } <br>
+
+                                else if (digitalRead(sensor1) == 0 ) <br>
+                                { <br>
+                                analogWrite(led,brightness); <br>
+                                analogWrite(led1,brightness); <br>
+                                analogWrite(led2,brightness); <br>
+
+                                digitalWrite(led,HIGH); <br>
+                                digitalWrite(led1,HIGH); <br>
+                                digitalWrite(led2,HIGH); <br>
+                                } <br>
+                                } <br>
+
+
+                                else if(digitalRead(sensor3) == 0)//car reached the 3rd sensor <br>
+                                { <br>
+                                //No cars detected behind the first car br
+                                if (digitalRead(sensor2) == 1) <br>
+                                { <br>
+                                carPresent = 0; <br>
+
+                                carPresent1 = 0; <br>
+                                } <br>
+                                else if (digitalRead(sensor2) == 0 ) <br>]
+                                { <br>
+                                carPresent = 0; <br>
+                                carPresent1 = 1; <br>
+                                } <br>
+                                } <br>
+                                } <br>
                         </p>
 
-
                         <div class="prox">
-                            <a href="#">próximo exerimento ➜</a>
+                            <a href="ex4_10.html">próximo exerimento ➜</a>
                         </div>
 
 
