@@ -31,7 +31,7 @@
 
             <section id="faq-pag">
                 <div class="tituloex">
-                    <h2 class="tittleexperi"> Genius (Jogo da memória)
+                    <h2 class="tittleexperi">Jogo da memória
                     </h2>
 
                     <hr>
@@ -43,20 +43,324 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Esse experimento nos ensina a como fazer um jogo da memória super divertido usando chave
+                            tactil e leds. Para isso vamos utilizar:
                         </p>
+                        <p class="contex">
+                            • 4 chave tactil
+
+                        </p>
+                        <p class="contex">
+                            • 4 leds (vermelho, amarelo, verder e azul)
+                        </p>
+                        <p class="contex">
+                            • speaker
+                        </p>
+                        <p class="contex">
+                            • protoboard
+
+                        </p>
+                        <p class="contex">
+                            • 8 resistores 220ohms
+                        </p>
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
 
 
-                        <div class="prox">
-                            <a href="#">próximo exerimento ➜</a>
-                        </div>
+                            #define NOTE_D4 294 <br>
 
+
+                            #define NOTE_G4 392 <br>
+
+                            #define NOTE_A4 440 <br>
+
+                            #define NOTE_A5 880 <br>
+
+
+
+
+                            int tons[4] = { NOTE_A5, NOTE_A4, NOTE_G4, NOTE_D4 };
+                            <br>
+
+
+                            int sequencia[100] = {};
+                            <br>
+
+
+                            int rodada_atual = 0; <br>
+
+
+
+                            int passo_atual_na_sequencia = 0; <br>
+
+
+
+                            int pinoAudio = 6; <br>
+
+                            int pinosLeds[4] = { 8, 9, 10, 11 }; <br>
+
+                            int pinosBotoes[4] = { 2, 3, 4, 5 }; <br>
+
+
+
+                            <br>
+
+                            int botao_pressionado = 0; <br>
+
+
+
+                            int perdeu_o_jogo = false; <br>
+
+
+
+                            void setup() { <br>
+
+
+
+                            for (int i = 0; i <= 3; i++) { <br>
+
+                                pinMode(pinosLeds[i], OUTPUT); <br>
+
+                                } <br>
+
+
+
+                                for (int i = 0; i <= 3; i++) { <br>
+                                    pinMode(pinosBotoes[i], INPUT); <br>
+                                    } <br>
+
+
+
+
+                                    pinMode(pinoAudio, OUTPUT); <br>
+
+
+
+                                    randomSeed(analogRead(0)); <br>
+
+                                    } <br>
+
+                                    void loop() { <br>
+
+
+
+                                    if (perdeu_o_jogo) { <br>
+
+                                    int sequencia[100] = {}; <br>
+
+                                    rodada_atual = 0; <br>
+                                    passo_atual_na_sequencia = 0; <br>
+
+                                    perdeu_o_jogo = false; <br>
+
+                                    } <br>
+
+                                    if (rodada_atual == 0) { <br>
+
+                                    tocarSomDeInicio(); <br>
+
+                                    delay(500); <br>
+
+                                    } <br>
+
+
+
+
+                                    proximaRodada(); <br>
+
+
+
+                                    reproduzirSequencia(); <br>
+
+
+
+                                    aguardarJogador(); <br>
+
+
+
+                                    delay(1000); <br>
+                                    } <br>
+
+
+
+
+                                    void proximaRodada() { <br>
+
+                                    int numero_sorteado = random(0, 4); <br>
+
+                                    sequencia[rodada_atual++] = numero_sorteado; <br>
+
+                                    } <br>
+
+
+
+
+
+                                    void reproduzirSequencia() { <br>
+                                    for (int i = 0; i < rodada_atual; i++) { <br>
+
+                                        tone(pinoAudio, tons[sequencia[i]]); <br>
+
+                                        digitalWrite(pinosLeds[sequencia[i]], HIGH); <br>
+                                        delay(500); <br>
+
+                                        noTone(pinoAudio); <br>
+
+                                        digitalWrite(pinosLeds[sequencia[i]], LOW); <br>
+                                        delay(100); <br>
+
+                                        } <br>
+
+                                        noTone(pinoAudio); <br>
+
+                                        } <br>
+
+
+
+
+
+                                        void aguardarJogador() { <br>
+
+                                        for (int i = 0; i < rodada_atual; i++) { <br>
+                                            aguardarJogada(); <br>
+
+                                            verificarJogada(); <br>
+
+
+                                            if (perdeu_o_jogo) { <br>
+
+                                            break; <br>
+                                            } <br>
+
+
+
+                                            passo_atual_na_sequencia++; <br>
+
+                                            } <br>
+
+
+
+
+
+                                            passo_atual_na_sequencia = 0; <br>
+                                            } <br>
+
+
+                                            void aguardarJogada() { <br>
+
+                                            boolean jogada_efetuada = false; <br>
+
+                                            while (!jogada_efetuada) { <br>
+
+                                            for (int i = 0; i <= 3; i++) { <br>
+
+                                                if (digitalRead(pinosBotoes[i]) == HIGH) { <br>
+
+
+                                                botao_pressionado = i; <br>
+
+
+
+                                                tone(pinoAudio, tons[i]); <br>
+
+                                                digitalWrite(pinosLeds[i], HIGH); <br>
+
+                                                delay(300); <br>
+
+                                                digitalWrite(pinosLeds[i], LOW); <br>
+
+                                                noTone(pinoAudio); <br>
+
+
+
+                                                jogada_efetuada = true; <br>
+
+                                                } <br>
+
+                                                } <br>
+
+                                                delay(10); <br>
+                                                } <br>
+                                                } <br>
+
+
+                                                void verificarJogada() { <br>
+                                                if (sequencia[passo_atual_na_sequencia] != botao_pressionado) { <br>
+
+
+                                                for (int i = 0; i <= 3; i++) { <br>
+                                                    tone(pinoAudio, tons[i]);
+                                                    <br>
+                                                    digitalWrite(pinosLeds[i], HIGH); <br>
+                                                    <br>
+                                                    delay(200); <br>
+
+                                                    digitalWrite(pinosLeds[i], LOW); <br>
+                                                    noTone(pinoAudio); <br>
+                                                    } <br>
+
+
+
+                                                    tone(pinoAudio, tons[3]); <br>
+
+                                                    for (int i = 0; i <= 3; i++) { <br>
+
+                                                        digitalWrite(pinosLeds[0], HIGH); <br>
+
+                                                        digitalWrite(pinosLeds[1], HIGH); <br>
+
+                                                        digitalWrite(pinosLeds[2], HIGH); <br>
+
+                                                        digitalWrite(pinosLeds[3], HIGH); <br>
+
+                                                        delay(100); <br>
+
+                                                        digitalWrite(pinosLeds[0], LOW); <br>
+
+                                                        digitalWrite(pinosLeds[1], LOW); <br>
+
+                                                        digitalWrite(pinosLeds[2], LOW); <br>
+
+                                                        digitalWrite(pinosLeds[3], LOW); <br>
+
+                                                        delay(100); <br>
+
+                                                        } <br>
+
+                                                        noTone(pinoAudio); <br>
+
+
+
+                                                        perdeu_o_jogo = true; <br>
+
+                                                        } <br>
+
+                                                        } <br>
+
+                                                        void tocarSomDeInicio() { <br>
+
+                                                        tone(pinoAudio, tons[0]); <br>
+
+                                                        digitalWrite(pinosLeds[0], HIGH); <br>
+
+                                                        digitalWrite(pinosLeds[1], HIGH); <br>
+                                                        digitalWrite(pinosLeds[2], HIGH); <br>
+                                                        digitalWrite(pinosLeds[3], HIGH); <br>
+
+                                                        delay(500); <br>
+
+                                                        digitalWrite(pinosLeds[0], LOW); <br>
+                                                        digitalWrite(pinosLeds[1], LOW); <br>
+                                                        digitalWrite(pinosLeds[2], LOW); <br>
+
+                                                        digitalWrite(pinosLeds[3], LOW); <br>
+                                                        delay(500); <br>
+                                                        noTone(pinoAudio); <br>
+                                                        } <br>
+
+                        </p>
 
 
 

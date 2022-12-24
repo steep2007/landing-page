@@ -43,16 +43,77 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Muitas pessoas gostam de ter plantas em suas casas, as vezes a pessoa precisa fazer uma
+                            viagem por exemplo deixando a planta sem o seu solo umido, podendo murchar a ou até mesmo
+                            matar a plantinha. Para a solução desse problema temos o sistem de irregação automatico.
+                            utilizando os sseguintes componentes:
                         </p>
 
+                        <p class="contex">
+                            • Sensor de umidade
 
+                        </p>
+                        <p class="contex">
+                            • Módulo de relé 5v
+                        </p>
+                        <p class="contex">
+                            •6v Mini bomba de água com tubo pequeno
+                        </p>
+                        <p class="contex">
+                            • Fios de conexão
+
+                        </p>
+                        <p class="contex">
+                            • Bateria 5v
+                        </p>
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            int soloMoistureValue = 0;
+
+                            int porcentagem=0; <br>
+
+                            void setup() { <br>
+
+                            pinMode(3,OUTPUT); <br>
+
+                            Serial.begin(9600); <br>
+
+                            }
+                            <br>
+                            void loop() { <br>
+
+                            soloMoistureValue = analogRead(A0); <br>
+
+                            Serial.println(porcentagem); <br>
+
+                            porcentagem = map(soilMoistureValue, 490, 1023, 100, 0);
+                            <br>
+                            if(porcentagem < 10) <br>
+
+                                { <br>
+
+                                Serial.println("bomba ligada"); <br>
+
+                                digitalWrite(3,BAIXO); <br>
+
+                                } <br>
+
+                                if(porcentagem >80) <br>
+
+                                { <br>
+
+                                Serial.println("bomba desligada"); <br>
+
+                                digitalWrite(3,HIGH); <br>
+
+                                } <br>
+
+                                } <br>
+
+
+                        </p>
                         <div class="prox">
                             <a href="#">próximo exerimento ➜</a>
                         </div>

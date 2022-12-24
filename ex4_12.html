@@ -43,13 +43,96 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Um sensor de cor pode ter a utilidade de identificara cor de um objeto, é um dispositivo
+                            muito simples e fácil de usar.
+                            Para realizar ese experimento o principal componete é o sensor Cor TCS3200
+                        </p>
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            /* <br>
+                            Pino S0 do Sensor -> Pino D8 do Arduino <br>
+                            Pino S1 do sensor -> Pino D7 do Arduino <br>
+                            Pino S2 do Sensor -> Pino D6 do Arduino <br>
+                            Pino S3 do Sensor -> Pino D5 do Arduino <br>
+                            Pino OUT do sensor -> Pino D4 do Arduino
+                            <br>
+                            */ <br>
+                            #define S0_PIN 5 <br>
+                            #define S1_PIN 4 <br>
+                            #define S2_PIN 7 <br>
+
+                            #define S3_PIN 6<br>
+                            #define OUT_PIN 8 <br>
+                            void setup() <br>
+                            { <br>
+                            // Define os pinos S0, S1, S2, S3 como saída <br>
+                            pinMode(S0_PIN, OUTPUT); <br>
+                            pinMode(S1_PIN, OUTPUT); <br>
+                            pinMode(S2_PIN, OUTPUT); <br>
+                            pinMode(S3_PIN, OUTPUT); <br>
+                            //Definir OUT_PIN como entrada <br>
+                            pinMode(OUT_PIN, INPUT); <br>
+                            // Definir escala de largura de pulso para 20% <br>
+                            digitalWrite(S0_PIN, ALTO); <br>
+                            digitalWrite(S1_PIN, BAIXO); <br>
+                            // Ativar UART para depuração <br>
+                            Serial.begin(9600); <br>
+                            } <br>
+                            laço vazio() <br>
+                            { <br>
+                            int r, g, b; <br>
+                            r = process_red_value(); <br>
+                            atraso(200); <br>
+                            g = process_green_value(); <br>
+                            atraso(200); <br>
+                            b = process_blue_value(); <br>
+                            atraso(200); <br>
+                            Serial.print("r = "); <br>
+                            Serial.print(r); <br>
+                            Serial.print(" "); <br>
+                            Serial.print("g = "); <br>
+                            Serial.print(g); <br>
+                            Serial.print(" "); <br>
+                            Serial.print("b = "); <br>
+                            Serial.print(b); <br>
+                            Serial.print(" "); <br>
+                            Serial.println(); <br>
+                            se (r < 42) <br>
+                                {<br>
+                                Serial.println("Cor Rosa"); <br>
+                                } <br>
+                                senão se (g < 63) <br>
+                                    { <br>
+                                    Serial.println("Cor Verde"); <br>
+                                    } <br>
+                                    senão se (r < 64) <br>
+                                        { <br>
+                                        Serial.println("Cor Vermelha"); <br>
+                                        } <br>
+                                        } <br>
+                                        int process_red_value() <br>
+                                        { <br>
+                                        digitalWrite(S2_PIN, BAIXO); <br>
+                                        digitalWrite(S3_PIN, BAIXO); <br>
+                                        int pulse_length = pulseIn(OUT_PIN, LOW); <br>
+                                        retornar pulso_comprimento; <br>
+                                        } <br>
+                                        int process_green_value() <br>
+                                        { <br>
+                                        digitalWrite(S2_PIN, ALTO); <br>
+                                        digitalWrite(S3_PIN, ALTO);<br>
+                                        int pulse_length = pulseIn(OUT_PIN, LOW); <br>
+                                        retornar pulso_comprimento; <br>
+                                        } <br>
+                                        int process_blue_value() <br>
+                                        { <br>
+                                        digitalWrite(S2_PIN, BAIXO); <br>
+                                        digitalWrite(S3_PIN, ALTO); <br>
+                                        int pulse_length = pulseIn(OUT_PIN, LOW); <br>
+                                        retornar pulso_comprimento; <br>
+                                        } <br>
                         </p>
 
 

@@ -43,16 +43,252 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Infelizmente os incêndios florestais são muito comuns, o que prejudica não só a natureza,
+                            mas também os animais. Esse problema poderia melhorar se em áreas florestais fosse
+                            implantado um sistema para detectar incêndios.Nesse experimento, vamos montar um detectador
+                            de incêndio com os seguintes componetes:
                         </p>
+                        <br>
 
+                        <p class="contex">
+                            • SIM800L GPS/GPRS Module
 
+                        </p>
+                        <p class="contex">
+                            • 3.7V Li-ion Battery
+                        </p>
+                        <p class="contex">
+                            • Flame sensor
+
+                        </p>
+                        <p class="contex">
+                            • protoboard
+
+                        </p>
+                        <p class="contex">
+                            • Dot matrix Perf board
+                        </p>
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            #include <SoftwareSerial.h> <br>
+
+                                SoftwareSerial gprsSerial(10, 11); <br>
+
+                                #include <String.h> <br>
+
+                                    int flag = 0; <br>
+
+                                    void setup() <br>
+
+                                    { <br>
+
+                                    pinMode(9, OUTPUT); <br>
+
+                                    pinMode(12, INPUT); <br>
+
+                                    gprsSerial.begin(9600); <br>
+
+                                    Serial.begin(9600); <br>
+
+                                    Module_Init(); <br>
+
+                                    } <br>
+
+                                    void loop() <br>
+
+                                    { <br>
+
+                                    if (gprsSerial.available()) <br>
+
+                                    Serial.write(gprsSerial.read()); <br>
+
+                                    int fire = digitalRead(12); <br>
+
+                                    if (fire == 0) <br>
+
+                                    { <br>
+
+                                    digitalWrite(9, HIGH); <br>
+
+                                    gprsSerial.println("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\"");//start up
+                                    the connection <br>
+
+                                    delay(6000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    gprsSerial.println("AT+CIPSEND"); <br>
+
+                                    delay(4000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    String str = "GET https://api.thingspeak.com/update?api_key=ER43PXXXXXHQF0I&field1="
+                                    + String(1); <br>
+
+                                    Serial.println(str); <br>
+
+                                    gprsSerial.println(str);//begin send data to remote server <br>
+
+                                    delay(4000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    digitalWrite(9, LOW); <br>
+
+                                    gprsSerial.println((char)26);//sending <br>
+
+                                    delay(5000);//waitting for reply, important! the time is base on the condition of
+                                    internet <br>
+
+                                    gprsSerial.println(); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    gprsSerial.println("AT+CIPSHUT");//close the connection <br>
+
+                                    delay(100); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    flag = 0; <br>
+
+                                    } <br>
+
+                                    else <br>
+
+                                    { <br>
+
+                                    digitalWrite(9, LOW); <br>
+
+                                    if (flag == 0) <br>
+
+                                    { <br>
+
+                                    flag = 1; <br>
+
+                                    gprsSerial.println("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",\"80\""); <br>
+                                    delay(6000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    gprsSerial.println("AT+CIPSEND"); <br>
+
+                                    delay(4000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    String str = "GET
+                                    https://api.thingspeak.com/update?api_key=ER43PWT91CGHQF0I&field1=" + String(0);
+                                    <br>
+
+                                    Serial.println(str); <br>
+
+                                    gprsSerial.println(str);//begin send data to remote server <br>
+
+                                    delay(4000); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    digitalWrite(9, LOW); <br>
+
+                                    gprsSerial.println((char)26);//sending <br>
+
+                                    delay(5000);//waitting for reply, important! the time is base on the condition of
+                                    internet <br>
+
+                                    gprsSerial.println(); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    gprsSerial.println("AT+CIPSHUT");//close the connection <br>
+
+                                    delay(100); <br>
+
+                                    ShowSerialData(); <br>
+
+                                    } <br>
+
+                                    } <br>
+
+                                    }
+                                    <br>
+                                    void ShowSerialData() <br>
+
+                                    { <br>
+
+                                    while (gprsSerial.available() != 0) <br>
+
+                                    Serial.write(gprsSerial.read()); <br>
+
+                                    delay(5000); <br>
+
+                                    } <br>
+
+                                    void Module_Init() <br>
+
+                                    { <br>
+
+                                    gprsSerial.println("AT"); <br>
+
+                                    delay(1000); <br>
+
+                                    gprsSerial.println("AT+CPIN?"); <br>
+
+                                    delay(1000); <br>
+
+                                    gprsSerial.println("AT+CREG?"); <br>
+
+                                    delay(1000);
+                                    <br>
+                                    gprsSerial.println("AT+CGATT?"); <br>
+
+                                    delay(1000); <br>
+
+                                    gprsSerial.println("AT+CIPSHUT"); <br>
+
+                                    delay(1000); <br>
+
+                                    gprsSerial.println("AT+CIPSTATUS"); <br>
+
+                                    delay(2000); <br>
+
+                                    gprsSerial.println("AT+CIPMUX=0");
+                                    <br>
+                                    delay(2000);
+                                    <br>
+                                    ShowSerialData();
+                                    <br>
+                                    gprsSerial.println("AT+CSTT=\"www\"");
+                                    <br>
+                                    delay(1000);
+                                    <br>
+                                    ShowSerialData();
+                                    <br>
+                                    gprsSerial.println("AT+CIICR");
+                                    <br>
+                                    delay(3000);
+                                    <br>
+                                    ShowSerialData();
+                                    <br>
+                                    gprsSerial.println("AT+CIFSR");
+                                    <br>
+                                    delay(2000);
+                                    <br>
+                                    ShowSerialData();
+                                    <br>
+                                    gprsSerial.println("AT+CIPSPRT=0");
+                                    <br>
+                                    delay(3000);
+                                    <br>
+                                    ShowSerialData();
+                                    <br>
+                                    }
+                                    <br>
+
+                        </p>
                         <div class="prox">
                             <a href="#">próximo exerimento ➜</a>
                         </div>
