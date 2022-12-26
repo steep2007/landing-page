@@ -43,13 +43,179 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Nesse experimento vamos aprender a medir a frequência cardíaca com os seguintes componetes:
+                        </p>
+
+                        <p class="contex">
+                            • Arduino UNO
+                        </p>
+                        <p class="contex">
+                            • Adafruit OLED 128x32
+
+                        </p>
+                        <p class="contex">
+                            • Buzzer
+
+                        </p>
+                        <p class="contex">
+                            • Maxim Integranted MAX30102 High-Sensitivity Pulse Oximeter and Heart-rate sensor for
+                            Wearable Health
+                        </p>
+
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            /* This code works with MAX30102 + 128x32 OLED i2c + Buzzer and Arduino UNO <br>
+                            * It's displays the Average BPM on the screen, with an animation and a buzzer sound <br>
+                            * everytime a heart pulse is detected <br>
+                            * It's a modified version of the HeartRate library example <br>
+                            * Refer to www.surtrtech.com for more details or SurtrTech YouTube channel <br>
+                            */ <br>
+
+                            #include <Adafruit_GFX.h> //OLED libraries <br>
+                                #include <Adafruit_SSD1306.h> <br>
+                                    #include <Wire.h> <br>
+                                        #include "MAX30105.h" //MAX3010x library <br>
+                                        #include "heartRate.h" //Heart rate calculating algorithm <br>
+
+                                        MAX30105 particleSensor; <br>
+
+                                        const byte RATE_SIZE = 4; //Increase this for more averaging. 4 is good. <br>
+                                        byte rates[RATE_SIZE]; //Array of heart rates <br>
+                                        byte rateSpot = 0; <br>
+                                        long lastBeat = 0; //Time at which the last beat occurred <br>
+                                        float beatsPerMinute; <br>
+                                        int beatAvg; <br>
+
+                                        #define SCREEN_WIDTH 128 // OLED display width, in pixels <br>
+                                        #define SCREEN_HEIGHT 32 // OLED display height, in pixels <br>
+                                        #define OLED_RESET -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+                                        <br>
+                                        Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+                                        //Declaring the display name (display) <br>
+
+                                        static const unsigned char PROGMEM logo2_bmp[] =
+                                        { 0x03, 0xC0, 0xF0, 0x06, 0x71, 0x8C, 0x0C, 0x1B, 0x06, 0x18, 0x0E, 0x02, 0x10,
+                                        0x0C, 0x03, 0x10, <br> //Logo2 and Logo3 are two bmp pictures that display on
+                                        the OLED if called <br>
+                                        0x04, 0x01, 0x10, 0x04, 0x01, 0x10, 0x40, 0x01, 0x10, 0x40, 0x01, 0x10, 0xC0,
+                                        0x03, 0x08, 0x88, <br>
+                                        0x02, 0x08, 0xB8, 0x04, 0xFF, 0x37, 0x08, 0x01, 0x30, 0x18, 0x01, 0x90, 0x30,
+                                        0x00, 0xC0, 0x60, <br>
+                                        0x00, 0x60, 0xC0, 0x00, 0x31, 0x80, 0x00, 0x1B, 0x00, 0x00, 0x0E, 0x00, 0x00,
+                                        0x04, 0x00, }; <br>
+                                        <br>
+                                        static const unsigned char PROGMEM logo3_bmp[] = <br>
+                                        { 0x01, 0xF0, 0x0F, 0x80, 0x06, 0x1C, 0x38, 0x60, 0x18, 0x06, 0x60, 0x18, 0x10,
+                                        0x01, 0x80, 0x08, <br>
+                                        0x20, 0x01, 0x80, 0x04, 0x40, 0x00, 0x00, 0x02, 0x40, 0x00, 0x00, 0x02, 0xC0,
+                                        0x00, 0x08, 0x03,<br>
+                                        0x80, 0x00, 0x08, 0x01, 0x80, 0x00, 0x18, 0x01, 0x80, 0x00, 0x1C, 0x01, 0x80,
+                                        0x00, 0x14, 0x00,<br>
+                                        0x80, 0x00, 0x14, 0x00, 0x80, 0x00, 0x14, 0x00, 0x40, 0x10, 0x12, 0x00, 0x40,
+                                        0x10, 0x12, 0x00,<br>
+                                        0x7E, 0x1F, 0x23, 0xFE, 0x03, 0x31, 0xA0, 0x04, 0x01, 0xA0, 0xA0, 0x0C, 0x00,
+                                        0xA0, 0xA0, 0x08,<br>
+                                        0x00, 0x60, 0xE0, 0x10, 0x00, 0x20, 0x60, 0x20, 0x06, 0x00, 0x40, 0x60, 0x03,
+                                        0x00, 0x40, 0xC0,<br>
+                                        0x01, 0x80, 0x01, 0x80, 0x00, 0xC0, 0x03, 0x00, 0x00, 0x60, 0x06, 0x00, 0x00,
+                                        0x30, 0x0C, 0x00,<br>
+                                        0x00, 0x08, 0x10, 0x00, 0x00, 0x06, 0x60, 0x00, 0x00, 0x03, 0xC0, 0x00, 0x00,
+                                        0x01, 0x80, 0x00 };<br>
+                                        <br>
+
+
+                                        void setup() { <br>
+                                        display.begin(SSD1306_SWITCHCAPVCC, 0x3C); //Start the OLED display <br>
+                                        display.display(); <br>
+                                        delay(3000); <br>
+                                        // Initialize sensor br
+                                        particleSensor.begin(Wire, I2C_SPEED_FAST); //Use default I2C port, 400kHz speed
+                                        <br>
+                                        particleSensor.setup(); //Configure sensor with default settings <br>
+                                        particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate
+                                        sensor is running <br>
+
+                                        } <br>
+
+                                        void loop() { <br>
+                                        long irValue = particleSensor.getIR(); <br>
+                                        #include <Adafruit_SSD1306.h> <br>
+                                            //Reading the IR value it will permit us to know if there's a finger on the
+                                            sensor or not <br>
+
+                                            //Also detecting a heartbeat <br>
+                                            if(irValue > 7000){ <br> //If a finger is detected <br>
+                                            display.clearDisplay(); //Clear the display <br>
+                                            display.drawBitmap(5, 5, logo2_bmp, 24, 21, WHITE); //Draw the first bmp
+                                            picture (little heart) <br>
+                                            display.setTextSize(2); //Near it display the average BPM you can display
+                                            the BPM if you want <br>
+                                            display.setTextColor(WHITE); <br>
+                                            display.setCursor(50,0); <br>
+                                            display.println("BPM"); <br>
+                                            display.setCursor(50,18);
+                                            <br>
+                                            display.println(beatAvg); <br>
+                                            display.display();<br>
+
+                                            if (checkForBeat(irValue) == true) //If a heart beat is detected <br>
+                                            { <br>
+                                            display.clearDisplay(); //Clear the display <br>
+                                            display.drawBitmap(0, 0, logo3_bmp, 32, 32, WHITE); //Draw the second
+                                            picture (bigger heart) <br>
+                                            display.setTextSize(2); //And still displays the average BPM <br>
+                                            display.setTextColor(WHITE); <br>
+                                            display.setCursor(50,0); <br>
+                                            display.println("BPM"); <br>
+                                            display.setCursor(50,18); <br>
+                                            display.println(beatAvg); <br>
+                                            display.display(); <br>
+                                            tone(3,1000); //And tone the buzzer for a 100ms you can reduce it it will be
+                                            better <br>
+                                            delay(100);<br>
+                                            noTone(3); //Deactivate the buzzer to have the effect of a "bip" <br>
+                                            //We sensed a beat! br
+                                            long delta = millis() - lastBeat; //Measure duration between two beats <br>
+                                            lastBeat = millis();
+                                            <br>
+                                            beatsPerMinute = 60 / (delta / 1000.0); //Calculating the BPM <br>
+
+                                            if (beatsPerMinute < 255 && beatsPerMinute> 20) //To calculate the average
+                                                we strore some values (4) then do some math to calculate the average
+                                                <br>
+                                                { <br>
+                                                rates[rateSpot++] = (byte)beatsPerMinute; //Store this reading in the
+                                                array <br>
+                                                rateSpot %= RATE_SIZE; //Wrap variable <br>
+
+                                                //Take average of readings <br>
+                                                beatAvg = 0; <br>
+                                                for (byte x = 0 ; x < RATE_SIZE ; x++) <br>
+                                                    beatAvg += rates[x]; <br>
+                                                    beatAvg /= RATE_SIZE; <br>
+                                                    } <br>
+                                                    } <br>
+
+                                                    } <br>
+                                                    if (irValue < 7000){ //If no finger is detected it inform the user
+                                                        and put the average BPM to 0 or it will be stored for the next
+                                                        measure <br>
+                                                        beatAvg=0; <br>
+                                                        display.clearDisplay(); <br>
+                                                        display.setTextSize(1); <br>
+                                                        display.setTextColor(WHITE); <br>
+                                                        display.setCursor(30,5); <br>
+                                                        display.println("Please Place "); <br>
+                                                        display.setCursor(30,15); <br>
+
+                                                        display.println("your finger "); <br>
+                                                        display.display(); <br>
+                                                        noTone(3); <br>
+                                                        } <br>
+
+                                                        } <br>
                         </p>
 
 

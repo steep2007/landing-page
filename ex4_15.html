@@ -43,16 +43,140 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Esse experimento consiste em mostrar a velocidade de movimento de um objeto.
                         </p>
+                        <h2>Componentes:</h2>
+                        <p class="contex">
+                            • Arduino nano r3
+                        </p>
+                        <p class="contex">
+                            • LCD padrão adafruit - 16x2
+
+                        </p>
+                        <p class="contex">
+                            • Sensor ultrassônico - HC-SR04 (Genérico)
+
+                        </p>
+                        <p class="contex">
+                            • Led
+                        </p>
+                        <p class="contex">
+                            • Resistor 330 Ohms
+                        </p>
+                        <p class="contex">
+                            • Potenciômetro de volta única - 10k ohms
+
+                        </p>
+                        <h2>Circuito: </h2>
+                        <img src="" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            #include <LiquidCrystal.h> <br>
+                                LiquidCrystal lcd(12, 11, 5, 4, 3, 2);// RS,E,D4,D5,D6,D7 <br>
+                                // defines pins numbers <br>
+                                const int trigPin = 9; <br>
+                                const int echoPin = 10; <br>
+
+                                // defines variables <br>
+                                long duration; <br>
+                                int distance1=0; <br>
+                                int distance2=0; <br>
+                                double Speed=0; <br>
+                                int distance=0; <br>
+
+                                void setup() <br>
+                                { <br>
+                                lcd.begin(16, 2);// LCD 16X2 <br>
+                                pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output <br>
+                                pinMode(echoPin, INPUT); // Sets the echoPin as an Input <br>
+                                pinMode( 7 , OUTPUT); <br>
+                                Serial.begin(9600); // Starts the serial communication <br>
+                                } <br>
 
 
+                                void loop() <br>
+                                { <br>
+
+                                //calculating Speed <br>
+                                distance1 = ultrasonicRead(); //calls ultrasoninicRead() function below <br>
+
+                                delay(1000);//giving a time gap of 1 sec <br>
+
+                                distance2 = ultrasonicRead(); //calls ultrasoninicRead() function below <br>
+
+                                //formula change in distance divided by change in time <br>
+                                Speed = (distance2 - distance1)/1.0; //as the time gap is 1 sec we divide it by 1. <br>
+
+                                //Displaying Speed <br>
+                                Serial.print("Speed in cm/s :"); <br>
+                                Serial.println(Speed); <br>
+                                lcd.setCursor(0,1); <br>
+                                lcd.print("Speed cm/s "); <br>
+                                lcd.print(Speed); <br>
+
+                                // LED indicator <br>
+                                if (distance >0 && distance <5) <br>
+                                    { <br>
+                                    digitalWrite( 7 , HIGH); <br>
+                                    delay(50); <br> // waits for a second <br>
+                                    } <br>
+
+                                    if (distance > 5 && distance <10 ) <br>
+                                        { <br>
+                                        digitalWrite( 7 , HIGH); <br>
+                                        delay(50); // waits for a second <br>
+                                        digitalWrite( 7 , LOW); // sets the LED off <br>
+                                        delay(50); // waits for a second <br>
+                                        } <br>
+
+                                        if (distance >10 && distance < 20) <br>
+                                            { <br>
+                                            digitalWrite( 7 , HIGH); <br>
+                                            delay(210); // waits for a second <br>
+                                            digitalWrite( 7 , LOW); // sets the LED off <br>
+                                            delay(210); // waits for a second <br>
+                                            }
+                                            <br>
+                                            if (distance >20 && distance < 35) <br>
+                                                { <br>
+                                                digitalWrite( 7 , HIGH); <br>
+                                                delay(610); // waits for a second <br>
+                                                digitalWrite( 7 , LOW); // sets the LED off <br>
+                                                delay(610); // waits for a second <br>
+                                                } <br>
+
+
+                                                }
+                                                <br>
+                                                float ultrasonicRead () <br>
+                                                { <br>
+                                                // Clears the trigPin <br>
+                                                digitalWrite(trigPin, LOW); <br>
+                                                delayMicroseconds(2); <br>
+
+                                                // Sets the trigPin on HIGH state for 10 micro seconds <br>
+                                                digitalWrite(trigPin, HIGH); <br>
+                                                delayMicroseconds(10); <br>
+                                                digitalWrite(trigPin, LOW); <br>
+
+                                                // Reads the echoPin, returns the sound wave travel time in microseconds
+                                                <br>
+                                                duration = pulseIn(echoPin, HIGH); <br>
+
+                                                //calculating distance <br>
+                                                distance= duration*0.034/2; <br>
+
+                                                // Prints the distance on the Serial Monitor <br>
+                                                Serial.print("Distance in cm : "); <br>
+                                                Serial.println(distance); <br>
+                                                lcd.setCursor(0,0); <br>
+                                                lcd.print("Dist. in cm "); <br>
+                                                lcd.print(distance); <br>
+                                                lcd.print(" "); <br>
+                                                return distance; <br>
+
+                                                } <br>
+                        </p>
                         <div class="prox">
                             <a href="#">próximo exerimento ➜</a>
                         </div>
