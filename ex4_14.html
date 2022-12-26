@@ -43,15 +43,298 @@
                         <h2 class="contex">1.1 Introdução</h2>
                         <br>
                         <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
+                            Já pensou em fazero seu próprio controle remoto caso o teu desse algum problema?
+                            Se sim, confira os componentes a baixo que serão necessários para essa montagem:
+
+                        </p>
+                        <br>
+                        <p class="contex">
+                            • Arduino UNO
+
+                        </p>
+                        <p class="contex">
+                            • Bateria de 9V (genérica)
+                        </p>
+                        <p class="contex">
+                            • Conector Jack de 9V para Barril
+                        </p>
+                        <p class="contex">
+                            • Transmitor IR (Genérico)
+
+                        </p>
+                        <p class="contex">
+                            • Parafuso de máquina, M3
+                        </p>
+                        <p class="contex">
+                            • Parafuso de máquina, M2.5
+
+                        </p>
+                        <p class="contex">
+                            • Porca M3
+                        </p>
+                        <p class="contex">
+                            • Porca M2.5
+                        </p>
+                        <p class="contex">
+                            • Resistor de orifício passante, 47 Ohm
+
+                        </p>
+                        <p class="contex">
+                            • Bateria 5v
+                        </p>
+                        <p class="contex">
+                            • Placa de prototipagem, 2,54mm
+
+                        </p>
+                        <p class="contex">
+                            • Botão de PCB
+                        </p>
+                        <p class="contex">
+                            • Male-Header 36 position 1 Row-Long (0.1)
                         </p>
 
+                        <h2>Circuito: </h2>
+                        <h2>Circuito impresso:</h2>
+
+                        <img src="img/Captura de tela de 2022-12-26 11-07-24.png" alt="circuito">
+                        <h2>Código: </h2>
+                        <p style="background-color: #ebddcc;">
+                            #include <IRremote.h> <br>
+                                #include <avr /sleep.h> <br>
+                                    #include <avr /power.h> <br>
+                                        #define OnOff 1 <br>
+                                        #define Source 0 <br>
+                                        #define CH_plus 4 <br>
+                                        #define CH_minus 5 <br>
+                                        #define Vol_plus 6 <br>
+                                        #define Vol_minus 7 <br>
+                                        #define Interrupt_Pin 2 <br>
+
+                                        //#define LG_TV <br>
+                                        //#define SAMSUNG_TV <br>
+                                        #define SONY_TV <br>
+
+                                        // Codes definition <br>
+                                        #ifdef LG_TV <br>
+                                        unsigned long on_off_code = 551489775; // HEX 20DF10EF <br>
+                                        unsigned long vol_plus_code = 551502015; //HEX 20DF40BF <br>
+                                        unsigned long vol_minus_code = 551534655; //HEX 20DFC03F <br>
+                                        unsigned long ch_plus_code = 551485695; //HEX 20DF00FF <br>
+                                        unsigned long ch_minus_code = 551518335; //HEX 20DF807F <br>
+                                        unsigned long source_code = 551538735; //HEX 20DFD02F <br>
+                                        #endif <br>
+                                        #ifdef SAMSUNG_TV <br>
+                                        unsigned long on_off_code = 3772793023; // HEX E0E040BF <br>
+                                        unsigned long vol_plus_code = 3772833823; //HEX E0E0E01F <br>
+                                        unsigned long vol_minus_code = 3772829743; //HEX E0E0D02F <br>
+                                        unsigned long ch_plus_code = 3772795063; //HEX E0E048B7 <br>
+                                        unsigned long ch_minus_code = 3772778743; //HEX E0E008F7 <br>
+                                        unsigned long source_code = 3772809343; //HEX E0E0807F <br>
+                                        #endif <br>
+                                        #ifdef SONY_TV <br>
+                                        unsigned long on_off_code = 2704; //HEX A90 <br>
+                                        unsigned long vol_plus_code = 1168; //HEX 490 <br>
+                                        unsigned long vol_minus_code = 3216; //HEX C90 <br>
+                                        unsigned long ch_plus_code = 144; //HEX 090 <br>
+                                        unsigned long ch_minus_code = 2192; //HEX 890 <br>
+                                        unsigned long source_code = 2640; //HEX A50 <br>
+                                        #endif <br>
+                                        //Enable Debug <br>
+                                        //#define DEBUG <br>
+                                        // <br>
+                                        IRsend irsend; //Create IR object <br>
+                                        unsigned long debounce_time; <br>
+                                        unsigned long last_time; <br>
+
+                                        void setup() { <br>
+                                        analogWrite(13,0); //turn of builtin led <br>
+                                        //noInterrupts(); //disable interrupts <br>
+                                        //CLKPR = _BV(CLKPCE); //enable clock prescaler settings <br>
+                                        //CLKPR = _BV(CLKPS0); //set clock prescaler = 2 --> 8 MHz <br>
+                                        //interrupts(); <br>
+                                        pinMode(OnOff,INPUT_PULLUP); <br>
+                                        pinMode(Source,INPUT_PULLUP); <br>
+                                        pinMode(CH_plus,INPUT_PULLUP); <br>
+                                        pinMode(CH_minus,INPUT_PULLUP); <br>
+                                        pinMode(Vol_plus,INPUT_PULLUP); <br>
+                                        pinMode(Vol_minus,INPUT_PULLUP); <br>
+                                        pinMode(Interrupt_Pin,INPUT_PULLUP); <br>
+                                        //power saving <br>
+                                        power_adc_disable(); //disable all ADCs <br>
+                                        power_spi_disable(); //disable SPI <br>
+                                        power_timer1_disable(); //disbale timer 1 (0 is for millis(), 2 is for
+                                        irremote.h) <br>
+                                        power_usart0_disable(); //disable serial <br>
+                                        power_twi_disable(); //disable TWI <br>
+                                        #ifdef DEBUG <br>
+                                        Serial.begin(9600); <br>
+                                        #endif <br>
+                                        } <br>
+
+                                        void loop() { <br>
+                                        //check OnOff <br>
+                                        if (!digitalRead(OnOff)) { <br>
+                                        debounce_time = millis(); <br>
+                                        while (millis() - debounce_time < 40 ) { <br>
+                                            ; <br>
+                                            } <br>
+                                            if (!digitalRead(OnOff)) { <br>
+                                            #ifdef LG_TV <br>
+                                            irsend.sendNEC(on_off_code, 32); <br>
+                                            #endif <br>
+                                            #ifdef SAMSUNG_TV <br>
+                                            irsend.sendSAMSUNG(on_off_code, 32);<br>
+                                            #endif <br>
+                                            #ifdef SONY_TV <br>
+                                            irsend.sendSony(on_off_code, 12); <br>
+                                            #endif <br>
+                                            last_time = millis(); //last time a button was pressed <br>
+                                            #ifdef DEBUG <br>
+                                            Serial.println("OnOff"); <br>
+                                            #endif <br>
+                                            } <br>
+                                            } <br>
+                                            //check Source <br>
+                                            if (!digitalRead(Source)) { <br>
+                                            debounce_time = millis(); <br>
+                                            while (millis() - debounce_time < 40 ) { <br>
+                                                ; <br>
+                                                }
+                                                if (!digitalRead(Source)) { <br>
+                                                #ifdef LG_TV<br>
+                                                irsend.sendNEC(source_code, 32); <br>
+                                                #endif <br>
+                                                #ifdef SAMSUNG_TV <br>
+                                                irsend.sendSAMSUNG(source_code, 32); <br>
+                                                #endif <br>
+                                                #ifdef SONY_TV <br>
+                                                irsend.sendSony(source_code, 12); <br>
+                                                #endif <br>
+                                                last_time = millis(); //last time a button was pressed <br>
+                                                #ifdef DEBUG <br>
+                                                Serial.println("Source"); <br>
+                                                #endif <br>
+                                                } <br>
+                                                } <br>
+                                                //check CH_plus <br>
+                                                if (!digitalRead(CH_plus)) { <br>
+                                                debounce_time = millis(); <br>
+                                                while (millis() - debounce_time < 40 ) { <br>
+                                                    ; <br>
+                                                    } <br>
+                                                    if (!digitalRead(CH_plus)) { <br>
+                                                    #ifdef LG_TV <br>
+                                                    irsend.sendNEC(ch_plus_code, 32); <br>
+                                                    #endif <br>
+                                                    #ifdef SAMSUNG_TV <br>
+                                                    irsend.sendSAMSUNG(ch_plus_code, 32); <br>
+                                                    #endif <br>
+                                                    #ifdef SONY_TV <br>
+                                                    irsend.sendSony(ch_plus_code, 12); <br>
+                                                    #endif <br>
+                                                    last_time = millis(); //last time a button was pressed <br>
+                                                    #ifdef DEBUG <br>
+                                                    Serial.println("CH+"); <br>
+                                                    #endif <br>
+                                                    } <br>
+                                                    } <br>
+                                                    //check CH_minus <br>
+                                                    if (!digitalRead(CH_minus)) { <br>
+                                                    debounce_time = millis(); <br>
+                                                    while (millis() - debounce_time < 40 ) { <br>
+                                                        ; <br>
+                                                        } <br>
+                                                        if (!digitalRead(CH_minus)) { <br>
+                                                        #ifdef LG_TV <br>
+                                                        irsend.sendNEC(ch_minus_code, 32); <br>
+                                                        #endif <br>
+                                                        #ifdef SAMSUNG_TV <br>
+                                                        irsend.sendSAMSUNG(ch_minus_code, 32); <br>
+                                                        #endif <br>
+                                                        #ifdef SONY_TV <br>
+                                                        irsend.sendSony(ch_minus_code, 12); <br>
+                                                        #endif <br>
+                                                        last_time = millis(); //last time a button was pressed <br>
+                                                        #ifdef DEBUG<br>
+                                                        Serial.println("CH-"); <br>
+                                                        #endif <br>
+                                                        } <br>
+                                                        } <br>
+                                                        //check Vol_plus <br>
+                                                        if (!digitalRead(Vol_plus)) { <br>
+                                                        debounce_time = millis(); <br>
+                                                        while (millis() - debounce_time < 40 ) { <br>
+                                                            ; <br>
+                                                            } <br>
+                                                            if (!digitalRead(Vol_plus)) { <br>
+                                                            #ifdef LG_TV <br>
+                                                            irsend.sendNEC(vol_plus_code, 32); <br>
+                                                            #endif <br>
+                                                            #ifdef SAMSUNG_TV <br>
+                                                            irsend.sendSAMSUNG(vol_plus_code, 32); <br>
+                                                            #endif <br>
+                                                            #ifdef SONY_TV <br>
+                                                            irsend.sendSony(vol_plus_code, 12); <br>
+                                                            #endif <br>
+                                                            last_time = millis(); //last time a button was pressed <br>
+                                                            #ifdef DEBUG <br>
+                                                            Serial.println("Vol+"); <br>
+                                                            #endif <br>
+                                                            } <br>
+                                                            } <br>
+                                                            //check Vol_minus <br>
+                                                            if (!digitalRead(Vol_minus)) { <br>
+                                                            debounce_time = millis(); <br>
+                                                            while (millis() - debounce_time < 40 ) { <br>
+                                                                ; <br>
+                                                                } <br>
+                                                                if (!digitalRead(Vol_minus)) { <br>
+                                                                #ifdef LG_TV <br>
+                                                                irsend.sendNEC(vol_minus_code, 32); <br>
+                                                                #endif <br>
+                                                                #ifdef SAMSUNG_TV <br>
+                                                                irsend.sendSAMSUNG(vol_minus_code, 32); <br>
+                                                                #endif <br>
+                                                                #ifdef SONY_TV <br>
+                                                                irsend.sendSony(vol_minus_code, 12); <br>
+                                                                #endif <br>
+                                                                last_time = millis(); //last time a button was pressed
+                                                                <br>
+                                                                #ifdef DEBUG <br>
+                                                                Serial.println("Vol-"); <br>
+                                                                #endif <br>
+                                                                } <br>
+                                                                } <br>
+                                                                if (millis()-last_time > 5000) { //a button has not been
+                                                                pressed for 10 s <br>
+                                                                #ifdef DEBUG <br>
+                                                                Serial.println("Going to sleep..."); <br>
+                                                                #endif <br>
+                                                                going_to_sleep(); //enter sleep mode <br>
+                                                                #ifdef DEBUG <br>
+                                                                Serial.println("Waking up..."); <br>
+                                                                #endif <br>
+                                                                } <br>
+                                                                } <br>
+
+                                                                //Sleep Mode function <br>
+                                                                void going_to_sleep() { <br>
+                                                                sleep_enable(); //enable sleep mode <br>
+                                                                attachInterrupt(digitalPinToInterrupt(Interrupt_Pin),
+                                                                wake_up, LOW); //interrupt for waking up --> configure
+                                                                Interrupt Pin as a WIRED NOR!!!<br>
+                                                                set_sleep_mode(SLEEP_MODE_PWR_DOWN); //full sleep mode
+                                                                <br>
+                                                                sleep_cpu(); //activate sleep mode <br>
+                                                                } <br>
+
+                                                                //Wake Up function <br>
+                                                                void wake_up() { <br>
+                                                                sleep_disable(); //disable sleep mode <br>
+                                                                detachInterrupt(digitalPinToInterrupt(Interrupt_Pin));
+                                                                //remove the interrupt <br>
+                                                                } <br>
+                        </p>
 
                         <div class="prox">
                             <a href="#">próximo exerimento ➜</a>
