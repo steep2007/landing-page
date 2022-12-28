@@ -1289,7 +1289,16 @@ padding-top: 80px;
   font-size: 100%;
 }
    
+.exper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.exper a {
+  font-family: 'Nunito', sans-serif;
+}
 
 @keyframes fade {
   from {opacity: .4}
