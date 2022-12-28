@@ -1,79 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FAQ - Física e Programação</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/experimentos.css">
-        <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/stylefaq.css">
-    </head>
-    <script src="js/script-scroll-faq.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Física e Programação</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logobarra.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/stylefaq.css">
+  </head>
+  <script src="js/script-scroll-faq.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-    <body>
-        <header class="cabecalho">
-            <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
-            <nav class="cabecalho-menu">
-                <a class="cabecalho-menu-item" href="index.html">Início</a>
-                <a class="cabecalho-menu-item" href="index.html#ifmaker-pag">IFMaker</a>
-                <a class="cabecalho-menu-item" href="index.html#experimentos-pag">Experimentos</a>
-                <a class="cabecalho-menu-item" href="index.html#equipe-pag">Equipe</a>
-                <a class="cabecalho-menu-item" href="index.html#faq-pag">FAQ</a>
-                <a class="cabecalho-menu-item" href="index.html#contato-pag">Contato</a>
-            </nav>
-        </header>
+  <body>
+    <header class="cabecalho">
+      <img class="cabecalho-imagem" src="img/ifms-marca-2015.png" alt="Logo do IFMS">
+      <nav class="cabecalho-menu">
+        <a class="cabecalho-menu-item" href="index.html">Início</a>
+        <a class="cabecalho-menu-item" href="index.html#ifmaker-pag">IFMaker</a>
+        <a class="cabecalho-menu-item" href="index.html#experimentos-pag">Experimentos</a>
+        <a class="cabecalho-menu-item" href="index.html#equipe-pag">Equipe</a>
+        <a class="cabecalho-menu-item" href="index.html#faq-pag">FAQ</a>
+        <a class="cabecalho-menu-item" href="index.html#contato-pag">Contato</a>
+      </nav>
+    </header>
 
-        <main class="conteudo" id="inicio-pag">
+    <main class="conteudo" id="inicio-pag">
 
-            <section id="faq-pag">
-                <div class="tituloex">
-                    <h2 class="tittleexperi">Projeto de Radar</h2>
+      <section id="faq-pag">
+        <div class="pag-conteudo-titulo-faq">
+          <h2>Radar</h2>
+          <hr>
+        </div>
+        <div class="pag-conteudo-faq">
 
-                    <hr>
+          <div class="pag-conteudo-texto-faq">
+            <h2>Introdução</h2>
+            <h3>Foi elaborado este circuito para facilitar a detecção de objetos a uma distância considerável, pensando que a aplicação de radares atualmente é, comumente, bastante utilizada em diversas áreas, desde a meteorologia, até no trânsito. 
+            </h3>
 
-                </div>
-                <div class="pag-conteudo-faq">
+            <h2>Componentes</h2>
+            <div class="pag-img-comp-faq">
+              <h3>1 - Arduino Uno R3; </h3>
+              <h3>1 - Sensor Ultrassônico - HC-SR04;</h3>
+              <h3>1 -  Micro servo SG90;</h3>
+              <h3>7 - Jumpers.</h3>
+            </div>
 
-                    <div class="pag-conteudo-texto-faq">
-                        <h2 class="contex">1.1 Introdução</h2>
-                        <br>
-                        <p class="contex">
-                            I'm findin' ways to articulate the feeling I'm goin' through
-                            I just can't say I don't love you
-                            'Cause I love you, yeah
-                            It's hard for me to communicate the thoughts that I hold
-                            But tonight I'm gon' let you know
-                            Let me tell the truth
-                            Baby, let me tell the truth, yeah
-                        </p>
-
-
-                        <div class="prox">
-                            <a href="#">próximo exerimento ➜</a>
-                        </div>
+            <h2>Código</h2>
+              <h3><i>#include <Servo.h><br>
 
 
+                const int trigPin = 10;<br>
+                const int echoPin = 11;<br>
+                
+                long duration;<br>
+                int distance;<br>
+                
+                Servo myServo; <br>
+                
+                void setup() {<br>
+                  pinMode(trigPin, OUTPUT);<br>
+                  pinMode(echoPin, INPUT); <br>
+                  Serial.begin(9600);<br>
+                  myServo.attach(12);<br>
+                }<br>
+                void loop() {<br>
+                  for(int i=15;i<=165;i++){  <br>
+                  myServo.write(i);<br>
+                  delay(30);<br>
+                  distance = calculateDistance();<br>
+                  
+                  Serial.print(i); <br>
+                  Serial.print(",");<br>
+                  Serial.print(distance); <br>
+                  Serial.print("."); <br>
+                  }<br>
+                  for(int i=165;i>15;i--){  <br>
+                  myServo.write(i);<br>
+                  delay(30);<br>
+                  distance = calculateDistance();<br>
+                  Serial.print(i);<br>
+                  Serial.print(",");<br>
+                  Serial.print(distance);<br>
+                  Serial.print(".");<br>
+                  }<br>
+                }<br>
+                
+                int calculateDistance(){ <br>
+                  
+                  digitalWrite(trigPin, LOW); <br>
+                  delayMicroseconds(2);<br>
+                  digitalWrite(trigPin, HIGH); <br>
+                  delayMicroseconds(10);<br>
+                  digitalWrite(trigPin, LOW);<br>
+                  duration = pulseIn(echoPin, HIGH); <br>
+                  distance= duration*0.034/2;<br>
+                  return distance;<br>
+                }<br>
+                </i></h3>
+
+            <h2>Circuito</h2>
+                <div class="pag-img-faq">
+                <img style="width: 100%;" src="img/exp 3_ maker.png" alt="">
+            </div>
+
+            <div class="posicao">
+                <a href="ex4_4.html">Próximo experimento ➜</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="pag-conteudo-footer-faq">
+      <hr class="linha-footer">
+      <h2 id="texto-footer-faq">©2022-2022 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.<br>
+        Campus Jardim: Rodovia BR 060, s/nº, saída para Bela Vista – Jardim/MS – CEP: 79240-000<br>
+        Telefone: (67) 3209-0200</h2>
+    </footer>
 
 
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="pag-conteudo-footer-faq">
-            <hr class="linha-footer">
-            <h2>©2022-2022 Instituto Federal de Educação, Ciência e Tecnologia de Mato Grosso do Sul.<br>
-                Campus Jardim: Rodovia BR 060, s/nº, saída para Bela Vista – Jardim/MS – CEP: 79240-000<br>
-                Telefone: (67) 3209-0200</h2>
-        </footer>
-
-
-    </body>
+  </body>
 
 </html>
