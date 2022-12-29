@@ -355,7 +355,14 @@
   border-radius: 2%;
   text-align: justify;
 }
-.timeline-footer p { margin-bottom: 0; }
+.timeline-footer p {
+   margin-bottom: 0; 
+   max-width: 450ch;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: block;
+   
+}
 .timeline-footer > a {
   cursor: pointer;
   text-decoration: none;
